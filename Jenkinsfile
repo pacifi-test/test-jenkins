@@ -10,7 +10,7 @@ pipeline {
           stage('TestApp') {
             steps {
             	sh '''
-            		bash -c "docker run --rm sonarsource/sonar-scanner-cli  -Dsonar.projectKey=django -Dsonar.host.url=http://192.168.1.102:9000 -Dsonar.sources=. -Dsonar.login=7c76b6f2ed3a5f41293ceca2697ae6b08141a640"
+            		bash -c "docker run --rm -e SONAR_HOST_URL="http://192.168.1.102:9000" -v "$(pwd):/usr/src" sonarsource/sonar-scanner-cli -Dsonar.projectKey=django -Dsonar.login=c48da5608591a076f796d757fbf837d2f2120bb1" 
                 '''
             }
         }  
