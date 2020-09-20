@@ -1,0 +1,4 @@
+../../../.virtualenvs/python1-jenkins/lib/python3.8/site-packages/django/contrib/messages/__init__.py:1:1 'from django.contrib.messages.api import *' used; unable to detect undefined names
+../../../.virtualenvs/python1-jenkins/lib/python3.8/site-packages/django/contrib/messages/__init__.py:1:1 'django.contrib.messages.api.*' imported but unused
+../../../.virtualenvs/python1-jenkins/lib/python3.8/site-packages/django/contrib/messages/__init__.py:2:1 'from django.contrib.messages.constants import *' used; unable to detect undefined names
+../../../.virtualenvs/python1-jenkins/lib/python3.8/site-packages/django/contrib/messages/__init__.py:2:1 'django.contrib.messages.constants.*' imported but unused
