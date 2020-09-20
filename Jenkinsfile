@@ -8,8 +8,10 @@ pipeline {
                }
         }
          stage('SonarTests') {
-        docker.image('newtmitch/sonar-scanner').inside('-v /var/run/docker.sock:/var/run/docker.sock --entrypoint=""') {
-            sh "/usr/local/bin/sonar-scanner --version"
+        steps {
+               docker.image('newtmitch/sonar-scanner').inside('-v /var/run/docker.sock:/var/run/docker.sock --entrypoint=""') {
+                     sh "/usr/local/bin/sonar-scanner --version"
+              }
         }
     }
           stage('TestApp') {
