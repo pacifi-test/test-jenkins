@@ -3,8 +3,22 @@ pipeline {
  agent any
  stages {
         stage('Checkout-git develop'){
+           when {
+                branch 'develop'
+            }
                steps{
               		git branch: 'develop', url: 'git@github.com:pacifi-test/test-jenkins.git'
+               }
+        }
+
+
+
+        stage('Checkout-git Master'){
+           when {
+                branch 'master'
+            }
+               steps{
+              		git branch: 'master', url: 'git@github.com:pacifi-test/test-jenkins.git'
                }
         }
 
