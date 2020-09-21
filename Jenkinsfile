@@ -2,11 +2,12 @@
 pipeline {
  agent any
  stages {
-        stage('Checkout-git'){
+        stage('Checkout-git develop'){
                steps{
-		git poll: true, url: 'https://github.com/pacifi-test/test-jenkins.git'
+              		git branch: 'develop', url: 'git@github.com:pacifi-test/test-jenkins.git'
                }
         }
+
        
     
           stage('TestApp') {
