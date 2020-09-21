@@ -1,0 +1,32 @@
+{% if proveedor %}
+    <table class="table">
+        <tr>
+            <th>Empresa</th>
+            <td>{{ proveedor.razon_social }}</td>
+        </tr>
+        <tr>
+            <th>Tipo Documento</th>
+            <td>{{ proveedor.tipo_documento_identidad.decripcion }}</td>
+        </tr>
+        <tr>
+
+            <th>Nro Documento</th>
+            <td>{{ proveedor.numero_documento }}</td>
+        </tr>
+
+    </table>
+{% else %}
+    <button id="add_proveedor" class="btn-primary">
+        <i class="fa fa-plus"></i>
+        Agregar Proveedor
+    </button>
+
+
+    <script>
+        $("#add_proveedor").click(
+            function () {
+
+            }
+        );
+    </script>
+{% endif %}

@@ -1,0 +1,107 @@
+{% extends "base/base_back.html" %}
+
+{% load i18n app_security %}
+{% load l10n humanize %}
+
+
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">Inicio</a>
+    &rsaquo; <a href="{% url 'almacen:compra_list' %}">Comprobantes</a>
+    &rsaquo; {{ object.serie_comprobante }} - {{ compra.nro_comprobante }}
+{% endblock breadcrumbs %}
+
+{% block content_title %}
+    {{ opts.verbose_name_plural|capfirst }}|
+    <small>{{ title }}</small>
+{% endblock content_title %}
+
+{% block content %}
+    <div class="container-overflow">
+        <table class="table  table-hover table-striped table-condensed table-responsive">
+
+            <tr>
+                <th>Proveedor</th>
+                <td>{{ object.proveedor }}</td>
+                <th>
+                    Fecha Registro
+                </th>
+                <td><label class="label label-info"><i
+                        class="fa fa-calendar"></i></label> {{ object.created_at|date:'d/m/Y H:i' }}</td>
+            </tr>
+            <tr>
+                <th>Identificación</th>
+                <td>{{ object.proveedor.nro_documento }}</td>
+                <th>Fecha Compra</th>
+                <td><label class="label label-info"><i
+                        class="fa fa-calendar"></i></label> {{ object.fecha_emision|date:"d/m/Y" }}</td>
+            </tr>
+            <tr>
+                <th>Nro Doc</th>
+                <td>{{ object.nro_comprobante }}</td>
+                <th>Tipo Comprobante</th>
+                <td>{{ object.tipo_comprobante }}</td>
+
+            </tr>
+        </table>
+    </div>
+    <div class="text-center">
+        <a href="{% url 'almacen:compra_updatestatus' object.id %}"
+           class="btn btn-success js-confirm" msg-title="Cerrar Comprobante" msg="Recuerde que no se puede revertir"
+           title="Cerrar Comprobante">
+            Finalizar
+        </a>
+    </div>
+    <div class="container-overflow">
+        <table class="table  table-hover table-striped table-condensed table-responsive">
+            <caption>Detalle</caption>
+            <tr>
+                <th>#</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Imagen</th>
+                <th>Acción</th>
+            </tr>
+            {% for d  in object.compradetalle_set.all %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ d.producto_general }}</td>
+                    <td>{{ d.cantidad }}</td>
+                    <td>
+                        <button><img src="{{ d.imagen.url }}" width="50" alt=""></button>
+                    </td>
+                    <td>
+                        {% if d.cantidad > d.equipo_set.count %}
+
+                            <ul>
+                                {% for producto in d.producto_general.producto_set.all %}
+                                    <li>
+                                        <a href="{% url 'almacen:compra_detalle_detail' d.pk producto.pk %}"><i
+                                                class="fa fa-eye"></i> {{ producto.codigo }}</a>
+                                    </li>
+                                {% endfor %}
+
+                            </ul>
+
+                        {% else %}
+                            <label class="label label-warning">
+                                <i class="text-danger fa fa-compass"></i> Completado
+                            </label>
+
+                        {% endif %}
+
+
+                    </td>
+                </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+    <div id="form_data_id">
+
+    </div>
+
+
+{% endblock content %}

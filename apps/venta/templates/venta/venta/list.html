@@ -1,0 +1,101 @@
+{% extends "base/base_back.html" %}
+
+{% load i18n app_security %}
+{% load l10n humanize %}
+
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">Inicio</a>
+    &rsaquo; {{ title }}
+{% endblock breadcrumbs %}
+
+{% block content_title %}
+    {{ opts.verbose_name_plural|capfirst }}|
+    <small>{{ title }}</small>
+{% endblock content_title %}
+
+{% block content %}
+
+
+    <div class="container-overflow">
+        <table class="table table-bordered table-hover table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#</th>
+
+
+                <th class="col-hidden" data-search="nombre"
+                    data-order="nombre">Número
+                </th>
+                <th>Cliente</th>
+                <th>Fecha</th>
+
+                <th>Comprobante</th>
+                <th>Total</th>
+
+                <th class="btn-actions col-blocked text-center">Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for d in object_list %}
+                <tr>
+                    <td>{% if is_paginated %}
+                        {{ page_obj.start_index|add:forloop.counter0 }}
+                    {% else %}
+                        {{ forloop.counter }}
+                    {% endif %}
+                    </td>
+
+                    <td>{{ d.serie.serie }} {{ d.nro_correlativo }}</td>
+                    <td>{{ d.cliente.nombres }} {{ d.cliente.apellidos }}</td>
+                    <td>{{ d.fecha_local|date:'d-m-Y' }}</td>
+                    <td>{{ d.tipo_comprobante.descripcion }}</td>
+                    <td>{{ d.total }}</td>
+                    <td class="text-center">
+                        <div class="btn-group">
+                            <a href="{% url 'venta:venta_detail' d.pk %}"
+                               class="btn btn-info btn-sm text-bold"
+                               title="Ver Venta" rel="tooltip"><i
+                                    class="btn-icon-only fa fa-eye"></i>
+                            </a>
+                            <a href="{% url 'venta:venta_xml' d.pk %}"
+                               class="btn btn-warning btn-sm js-confirm text-bold"
+                               msg-title="{{ d.tipo_comprobante.descripcion }} Electronico?."
+                               msg="Esta Seguro<br/>Recuerde que esta acción no se puede retroceder"
+                               title="{{ d.tipo_comprobante.descripcion }} Electrónica" rel="tooltip"><i
+                                    class="btn-icon-only fa fa-sun-o"></i> XML
+                            </a>
+                            {% if not d.electronico %}
+                                <a href="{% url 'venta:venta_electronica' d.pk %}"
+                                   class="btn btn-warning btn-sm js-confirm text-bold"
+                                   msg-title="{{ d.tipo_comprobante.descripcion }} Electronico?."
+                                   msg="Esta Seguro<br/>Recuerde que esta acción no se puede retroceder"
+                                   title="{{ d.tipo_comprobante.descripcion }} Electrónica" rel="tooltip"><i
+                                        class="btn-icon-only fa fa-sun-o"></i>
+                                </a>
+                            {% endif %}
+
+                        </div>
+
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+    <div class="row">
+        {% if is_paginated %}
+            {% load paginator %}
+            {% paginator %}
+        {% else %}
+            <div class="col-md-12">
+                <ul class="breadcrumbpag">
+                    {{ object_list.count }}
+                    {% ifequal object_list.count 1 %}{{ opts.verbose_name|capfirst }}{% else %}
+                        {{ opts.verbose_name_plural|capfirst }}{% endifequal %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock content %}

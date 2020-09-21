@@ -1,0 +1,64 @@
+    <div class="container-overflow">
+
+<table class="table table-bordered table-hover table-striped table-condensed table-responsive">
+
+    <tr>
+        <th>#</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Vu</th>
+        <th>Pu</th>
+        <th>Igv</th>
+        <th>Precio Total</th>
+        <th>Total</th>
+        <th>Acción</th>
+    </tr>
+    {% for object in object_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ object.producto_general.codigo }}</td>
+            <td>{{ object.cantidad }}</td>
+            <td>{{ object.valor_unitario }}</td>
+            <td>{{ object.precio_unitario }}</td>
+            <td>{{ object.igv }}</td>
+            <td>{{ object.precio_total }}</td>
+            <td>{{ object.total }}</td>
+            <td>
+
+                {% if not object.compra.procesado %}
+
+                    <a href="{% url 'compra:compradetalle_delete' object.pk compra_pk %}"
+                       class="btn btn-danger btn-sm js-confirm text-bold"
+                       msg-title="Eliminar Detalle"
+                       msg="Seguro quiere eliminar Detale."
+                       title="Eliminar Detalle" rel="tooltip"><i
+                            class="btn-icon-only fa fa-trash-o"></i>
+                    </a>
+                {% else %}
+                    <label for="" class="label label-success">Procesado</label>
+                {% endif %}
+
+
+            </td>
+        </tr>
+    {% endfor %}
+    <tr>
+
+        <th class="text-center" colspan="7">Base Imponible</th>
+        <th colspan="2">{{ compra.base_imponible }}</th>
+    </tr>
+
+    <tr>
+
+        <th class="text-center" colspan="7">IGV</th>
+        <th colspan="2">{{ compra.igv }}</th>
+    </tr>
+    <tr>
+
+        <th class="text-center" colspan="7">Total</th>
+        <th colspan="2">{{ total.total__sum }}</th>
+    </tr>
+
+
+</table>
+</div>

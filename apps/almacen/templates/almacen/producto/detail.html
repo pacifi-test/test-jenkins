@@ -1,0 +1,125 @@
+{% extends "base/base_back.html" %}
+{% load static %}
+{% load i18n app_security %}
+{% load l10n humanize %}
+
+
+{% block customcss %}
+    <link rel="stylesheet" href="{% static 'bower/angular-toastr/dist/angular-toastr.min.css' %}">
+{% endblock %}
+
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">Inicio</a>
+    &rsaquo; <a href="{% url 'almacen:producto_list' %}">Productos</a>
+    &rsaquo; {{ object.codigo }}
+{% endblock breadcrumbs %}
+
+{% block content_title %}
+    {{ opts.verbose_name_plural|capfirst }}|
+    <small>{{ object.marca.nombre }} {{ object.codigo }}</small>
+{% endblock content_title %}
+
+{% block content %}
+
+    <div ng-app="myApp">
+        <div ng-controller="equipoCtrl as ctrl" class="container">
+            <input type="text" hidden id="producto_id" value="{{ object.id }}">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-inline">
+                        <form ng-submit="ctrl.addEquipo()">
+                            <input type="text" required="" ng-focus="ctrl.focusAdd" class="form-control"
+                                   placeholder="Ingrese Imei"
+                                   ng-model="ctrl.imei">
+                            <button class="btn btn-primary"><i class="fa fa-save"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <table class="table">
+                        <tr>
+                            <th>Modelo</th>
+                            <th>Color</th>
+
+                            <th>Descripción</th>
+                            <th>Vendidos</th>
+                            <th>Almacen</th>
+                            <th>Distribución
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>{{ object.codigo }}</td>
+                            <td>{{ object.color }}</td>
+                            <td>{{ object.descripcion }}</td>
+                            <td>{[{ ctrl.producto.vendidos }]}</td>
+                            <td>{[{ ctrl.producto.almacen }]}</td>
+                            <td>{[{ ctrl.producto.salida }]}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <table class="table">
+                <tr>
+                    <th>#</th>
+                    <td>Imei</td>
+                    <td>Contable</td>
+                    <td>Acción</td>
+                </tr>
+                <tr ng-repeat="eq in ctrl.equipos">
+                    <td>{[{$index + 1}]}</td>
+                    <td>{[{ eq.imei }]}</td>
+                    <td>
+                        <label class="label label-info" ng-if="ctrl.contable">
+                            Contable
+                        </label>
+                        <label class="label label-info" ng-if="!ctrl.contable">
+                            No Contable
+                        </label>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" ng-click="ctrl.removeEquipo(eq)"><i class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+
+            <button class="open-dialog btn btn-primary" type="button" ng-click="ctrl.multiConfirmationDialog()">Enviar
+                Equipos
+            </button>
+
+            <div id="confirmation-dialog">
+                <div class="modal fade confirmation-dialog" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">{[{ ctrl.confirmationDialogConfig.title }]}</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="span5">{[{ ctrl.confirmationDialogConfig.message }]}</div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                <button type="button" ng-repeat="button in ctrl.confirmationDialogConfig.buttons"
+                                        ng-click="ctrl.executeDialogAction(button.action)"
+                                        class="btn {[{ button.class }]} ">{[{ button.label }]}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+{% endblock content %}
+
+
+{% block customjs %}
+
+    <script src="{% static 'almacen/service.js' %}"></script>
+    <script src="{% static 'almacen/equipo/equipoctrl.js' %}"></script>
+{% endblock %}

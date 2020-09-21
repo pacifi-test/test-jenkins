@@ -1,0 +1,134 @@
+{% extends "base/base_back.html" %}
+
+{% load i18n app_security %}
+{% load l10n humanize %}
+
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">Inicio</a>
+    &rsaquo; {{ title }}
+{% endblock breadcrumbs %}
+
+{% block content_title %}
+    {{ opts.verbose_name_plural|capfirst }}|
+    <small>{{ title }}</small>
+{% endblock content_title %}
+
+{% block content %}
+    <script type="text/javascript">
+        $(function () {
+            $('table').kgrid({
+                order_attr: 'class=""',
+                order_to: '{% url "reporte:equipo_list" %}?f={{f}}&q={{q}}&estado={{request.GET.estado}}&contable={{request.GET.contable}}',
+            });
+        });
+    </script>
+    <div class="hidden-print text-center">
+        <form action="" class="form-inline" method="get">
+            {#            <h3>#}
+            {#                {% if request.GET.estado == 'all' %}#}
+            {#                    all#}
+            {#                {% else %}#}
+            {#                    {{ request.GET.estado }}#}
+            {#                {% endif %}#}
+            {##}
+            {#                {% if request.GET.estado == 'all' %}#}
+            {#                    Todo#}
+            {#                {% else %}#}
+            {#                    {% if request.GET.estado == True %}#}
+            {#                        Conable#}
+            {#                    {% else %}#}
+            {#                        No Conable#}
+            {#                    {% endif %}#}
+            {#                {% endif %}#}
+            {#            </h3>#}
+            <select name="estado" id="" class="form-control">
+                <option value="all">Todo</option>
+                {% for value, text in estados %}
+                    <option value="{{ value }}" {% if value == request.GET.estado %}selected {% endif %}>{{ value }}
+                    </option>
+                {% endfor %}
+
+            </select>
+            <select name="contable" id="" class="form-control">
+                <option value="all">Todo</option>
+                <option value="false" {% if request.GET.contable == 'false' %}selected {% endif %}>No Contable</option>
+                <option value="true" {% if request.GET.contable == 'true' %}selected {% endif %}>Contable</option>
+            </select>
+            <button class="btn btn-primary"><i class="fa fa-search"></i> Buscar</button>
+
+        </form>
+    </div>
+    <div class="text-center">
+
+        <a class="printPage btn btn-primary hidden-print " href="#"><i class="fa fa-print"></i> Imprimir</a>
+    </div>
+    <div class="container-overflow">
+        <table id="equipos_id" class="table table-bordered table-hover table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Producto
+                </th>
+                <th class="col-hidden"
+                    data-order="imei">Imei
+                </th>
+                <th>
+                    Estado
+                </th>
+                <th data-order="created_at">
+                    Fecha de Ingreso
+                </th>
+                <th>Registrado por</th>
+                <th class="col-hidden" >Contable</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for d in object_list %}
+                <tr>
+                    <td>{% if is_paginated %}
+                        {{ page_obj.start_index|add:forloop.counter0 }}
+                    {% else %}
+                        {{ forloop.counter }}
+                    {% endif %}
+                    </td>
+                    <td>{{ d.producto.codigo }}</td>
+                    <td>{{ d.imei }}</td>
+                    <td>{{ d.estado }}</td>
+                    <td>
+                        {{ d.created_at|date:'d/m/Y H:i' }}
+                    </td>
+                    <td>
+                        {{ d.user }}
+                    </td>
+                    <td>
+                        {% if d.contable %}
+                            <p class="text-info">Contable</p>
+                        {% else %}
+                            <p class="text-warning">No Contable</p>
+                        {% endif %}
+
+                    </td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+
+
+{% endblock content %}
+
+
+{% block customjs %}
+    <script>
+        $('a.printPage').click(function () {
+            $("#equipos_id").removeClass();
+            $("#equipos_id").addClass("table");
+            window.print();
+            return false;
+        });
+    </script>
+{% endblock %}

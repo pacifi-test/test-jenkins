@@ -1,0 +1,123 @@
+{% extends "base/base_back.html" %}
+
+{% load i18n crispy_forms_tags %}
+{% load l10n %}
+
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">Inicio</a>
+    &rsaquo;
+    <a href="{% url 'producto:producto_general_list' %}">{{ opts.verbose_name_plural|capfirst }}</a>
+    &rsaquo; {{ title }}
+{% endblock breadcrumbs %}
+
+{% block content_title %}
+    {{ opts.verbose_name|capfirst }}|
+    <small>{{ title }}</small>
+{% endblock content_title %}
+
+{% block content %}
+
+    {% crispy form %}
+
+    {% if object %}
+        <table class="table table-responsive">
+            <caption>Códigos Internos
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        data-whatever="{% url 'producto:producto_simple_add' object.id %}"><i class="fa fa-plus"></i>
+                </button>
+            </caption>
+            <tr>
+                <th>#</th>
+                <th>color</th>
+                <th>codigo Interno</th>
+                <th>Acción</th>
+            </tr>
+            {% for producto in object.producto_set.all %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ producto.color }}</td>
+                    <td>{{ producto.codigo }}</td>
+                    <td>
+                        <a data-toggle="modal" data-target="#exampleModal"
+                           data-whatever="{% url 'producto:producto_simple_update' producto.pk object.id %}"
+                           class="btn btn-info btn-sm text-bold"
+                           title="Cambiar Producto" rel="tooltip"><i
+                                class="btn-icon-only fa fa-edit"></i>
+                        </a>
+
+                        <a href="{% url 'producto:producto_simple_delete' producto.pk object.pk %}"
+                           class="btn btn-danger btn-sm js-confirm text-bold"
+                           msg-title="Eliminar Producto?."
+                           msg="Esta Seguro<br/>Recuerde que esta acción no se puede retroceder"
+                           title="Eliminar Producto" rel="tooltip"><i
+                                class="btn-icon-only fa fa-trash-o"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </table>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+                    </div>
+                    <div class="modal-body" id="form_producto_id">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    {% endif %}
+
+
+
+
+
+{% endblock %}
+
+
+{% block customjs %}
+    <script>
+        $(window).on("load", function () {
+            $("span.select2-selection").removeClass("select2-selection--single");
+        });
+    </script>
+    <script>
+        $('form').submit(function () {
+            $(this).find("button[type='submit']").prop('disabled', true);
+        });
+
+    </script>
+    <script>
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var url = button.data('whatever') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+
+
+            $.ajax({
+                url: url,
+                context: document.body
+            }).done(function (html) {
+                $("#form_producto_id").html(html);
+
+
+            });
+        })
+    </script>
+
+{% endblock customjs %}
+
