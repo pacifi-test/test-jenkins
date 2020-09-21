@@ -18,7 +18,7 @@ pipeline {
         }  
         stage('TestApp Develop') {
            when {
-                branch 'development'
+                branch 'develop'
             }
 
             steps {
