@@ -1,0 +1,104 @@
+{% extends "base/base_back.html" %}
+
+
+{% load i18n app_security %}
+{% load l10n humanize %}
+{% load static %}
+
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">Inicio</a>
+    &rsaquo; {{ title }}
+{% endblock breadcrumbs %}
+
+
+{% block content_title %}
+    {{ opts.verbose_name_plural|capfirst }}|
+    <small>{{ title }}</small>
+
+{% endblock content_title %}
+
+
+{% block content %}
+    <div ng-app="myApp">
+        <div ng-controller="salidaDetalleCtrl as ctrl">
+            <h3 class="text-center visible-print">Ficha de Salida</h3>
+            <div class="text-center">
+                <p class="text text-info">Código de Salida: <strong>{{ object.codigo }}</strong></p>
+                <p class="text text-info">Fecha de Salida: <strong>{{ object.created_at|date:'d-m-Y h:i' }}</strong></p>
+                <p class="text text-info">Cantidad Equipos: <strong>{{ object.salidadetalle_set.count }}</strong></p>
+            </div>
+            <div class="container-overflow">
+                <div id="exportable">
+                    <table id="equipos_id"
+                           class="table table-bordered table-hover table-striped table-condensed table-responsive">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Color</th>
+                            <th>Imei</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for d in object.salidadetalle_set.all %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ d.equipo.producto.marca.nombre }}</td>
+                                <td>{{ d.equipo.producto.codigo }}</td>
+                                <td>{{ d.equipo.producto.color }}</td>
+                                <td>{{ d.equipo.imei }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+
+            <div class="info text-center">
+
+                <p class="text-info"><label>Asignado
+                    Por:</label> {{ object.user.person.first_name }} {{ object.user.person.last_name }} {{ object.user.person.identity_type }} {{ object.user.person.identity_num }}
+                </p>
+                <p class="text-info"><label>Asignado
+                    A:</label> {{ object.vendedor.person.first_name }} {{ object.vendedor.person.last_name }} {{ object.vendedor.person.identity_type }} {{ object.vendedor.person.identity_num }}
+                </p>
+
+            </div>
+            <div class="text-center">
+
+                <a class="printPage btn btn-primary hidden-print " href="#"><i class="fa fa-print"></i> Imprimir</a>
+                <button class="btn btn-info" ng-click="ctrl.exportExcel('exportable')"><i
+                        class="fa fa-file-excel-o"></i> Exportar
+                </button>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block customjs %}
+    <script>
+        $('a.printPage').click(function () {
+            $("#equipos_id").removeClass();
+            $("#equipos_id").addClass("table");
+            window.print();
+            return false;
+        });
+    </script>
+
+    <script>
+        (function () {
+            angular.module("myApp").controller('salidaDetalleCtrl', salidaDetalleCtrl);
+            salidaDetalleCtrl.$inject = ["Convert"];
+
+            function salidaDetalleCtrl(Convert) {
+                var self = this;
+
+                self.exportExcel = function (id) {
+                    Convert.ToExcel(document.getElementById(id).innerHTML, 'Cliente');
+                };
+            }
+        }());
+    </script>
+{% endblock %}

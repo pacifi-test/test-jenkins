@@ -1,0 +1,99 @@
+{% extends 'base/base_back.html' %}
+
+{% load static %}
+
+
+{% block customcss %}
+    <link rel="stylesheet" href="{% static 'bower/angular-toastr/dist/angular-toastr.min.css' %}">
+{% endblock customcss %}
+
+
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">Inicio</a>
+    &rsaquo; {{ title }}
+{% endblock breadcrumbs %}
+
+
+{% block content_title %}
+    {{ opts.verbose_name_plural|capfirst }}|
+    <small>{{ title }}</small>
+{% endblock content_title %}
+
+{% block content %}
+    <div class="container" ng-app="myApp">
+        <div ng-controller="salidaCtrl as ctrl">
+
+            <fieldset class="form-inline">
+                <h4>Ruta</h4>
+                <select name="distribuidor" id="" ng-required="true" class="form-control"
+                        ng-model="ctrl.distribuidor">
+                    {% for distribuidor in distribuidores %}
+                        <option value="{{ distribuidor.username }}">{{ distribuidor.username }}</option>
+                    {% endfor %}
+                </select>
+                <span ng-show="(myForm.distribuidor.$dirty || submitted) && myForm.distribuidor.$error.required">Campo Requerido</span>
+                <select class="form-control" ng-required="true" name="ruta" id="" ng-model="ctrl.ruta">
+                    {% for value, index in rutas %}
+                        <option value="{{ value }}">{{ value }}</option>
+                    {% endfor %}
+                </select>
+                <span ng-show="myForm.ruta.$dirty && myForm.ruta.$error.required">Campo Requerido</span>
+
+            </fieldset>
+            <fieldset class="form-inline">
+                <h4>Cargar Equipos</h4>
+                <form ng-submit="ctrl.buscarEquipo()">
+                    <input type="text" ng-model="ctrl.imei" class="form-control" ng-focus="ctrl.focusAdd">
+                </form>
+            </fieldset>
+
+            <table class="table">
+                <caption>Equipos</caption>
+                <tr>
+                    <th>#</th>
+                    <th>Producto</th>
+                    <th>Marca</th>
+                    <th>Color</th>
+                    <th>Imei</th>
+                    <th>Acción</th>
+
+                </tr>
+                <tr ng-repeat="equipo in ctrl.equipos">
+                    <td>{[{ $index + 1 }]}</td>
+                    <td>{[{ equipo.model }]}</td>
+                    <td>{[{ equipo.marca }]}</td>
+                    <td>{[{ equipo.color }]}</td>
+                    <td>{[{ equipo.imei }]}</td>
+                    <td>
+                        <button ng-click="ctrl.removeEquipo(equipo)"><i class="fa fa-trash"></i></button>
+                    </td>
+                </tr>
+            </table>
+
+
+            <button type="submit" class="btn btn-primary" ng-click="ctrl.salidaSave()"><i class="fa fa-shopping-cart"></i> Confirmar Salida
+            </button>
+
+        </div>
+    </div>
+
+
+{% endblock content %}
+
+
+{% block customjs %}
+    {#    <script>#}
+    {#        $('form').submit(function () {#}
+    {#            $(this).find("button[type='submit']").prop('disabled', true);#}
+    {#        });#}
+    {##}
+    {#    </script>#}
+    <script src="{% static 'bower/angular/angular.min.js' %}"></script>
+    <script src="{% static 'bower/angular-resource/angular-resource.min.js' %}"></script>
+    <script src="{% static 'bower/angular-toastr/dist/angular-toastr.tpls.min.js' %}"></script>
+    <script src="{% static 'custom/js/app.js' %}"></script>
+    <script src="{% static 'almacen/service.js' %}"></script>
+    <script src="{% static 'almacen/salida/salidactrl.js' %}"></script>
+
+{% endblock customjs %}
+

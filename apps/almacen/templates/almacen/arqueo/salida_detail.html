@@ -1,0 +1,107 @@
+{% extends "base/base_back.html" %}
+
+
+{% load i18n app_security %}
+{% load l10n humanize %}
+
+
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">Inicio</a>
+    &rsaquo; {{ title }}
+{% endblock breadcrumbs %}
+
+
+{% block content_title %}
+    {{ opts.verbose_name_plural|capfirst }}|
+    <small>{{ title }}</small>
+{% endblock content_title %}
+
+
+{% block content %}
+
+    <form method="post" class="form-inline">
+        {% csrf_token %}
+        <fieldset class="scheduler-border">
+            <legend class="scheduler-border">Imei</legend>
+            <input type="text" class="form-control" required placeholder="Ingrese Imei" name="imei" id="id_imei">
+            <button type="submit" class="form-control btn btn-primary"><i class="fa fa-search"></i>
+            </button>
+        </fieldset>
+    </form>
+
+    <div class="container-overflow">
+        <table class="table table-bordered table-hover table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th class="col-hidden" data-search="nro_correlativo"
+                    data-order="nro_correlativo">#
+                </th>
+                <th class="col-hidden">Producto</th>
+                <th class="col-hidden">Color</th>
+                <th class="col-hidden">Imei</th>
+                <th class="col-hidden">Estado</th>
+                <th class="col-hidden">Acción</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for d in detalles %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ d.equipo.producto.codigo }}</td>
+                    <td>{{ d.equipo.producto.color }}</td>
+                    <td>{{ d.equipo.imei }}</td>
+                    <td>{{ d.equipo.estado }}</td>
+
+                    <td class="text-center">
+                        <div class="btn-group">
+
+                            {% if d.equipo.estado != "VENDIDO" and d.equipo.estado != "ALMACEN" %}
+                                <a href="{% url 'almacen:arqueo_equipo_update' d.id %}"
+                                   class="btn btn-info js-confirm text-bold" msg-title="Ingreso a Almacen."
+                                   msg="Esta Seguro<br/>Recuerde que esta acción no se puede retroceder"
+                                   title="Ingreso a Almacen" rel="tooltip">
+                                    <i class="fa fa-archive"></i>
+                                    Retornar
+                                </a>
+                            {% else %}
+                                <p class="text text-warning"><i class="fa fa-ban"></i></p>
+                            {% endif %}
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <p class="text-center">
+        <a href="{% url 'almacen:arqueo_salida_close' object.id %}" class="btn btn-primary js-confirm text-bold">
+            <i class="fa fa-handshake-o"></i> Cerrar Arqueo
+        </a>
+    </p>
+    <div class="row">
+        {% if is_paginated %}
+            {% load paginator %}
+            {% paginator %}
+        {% else %}
+            <div class="col-md-12">
+                <ul class="breadcrumbpag">
+                    {{ object_list.count }}
+                    {% ifequal object_list.count 1 %}{{ opts.verbose_name|capfirst }}{% else %}
+                        {{ opts.verbose_name_plural|capfirst }}{% endifequal %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock content %}
+
+{% block customjs %}
+    <script>
+        $(document).ready(function () {
+            $("#id_imei").focus();
+        });
+
+    </script>
+{% endblock %}

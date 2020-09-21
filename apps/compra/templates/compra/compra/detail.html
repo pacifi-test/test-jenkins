@@ -1,0 +1,130 @@
+{% extends "base/base_back.html" %}
+
+{% load i18n app_security %}
+{% load l10n humanize %}
+
+
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">Inicio</a>
+    &rsaquo; <a href="{% url 'compra:compra_list' %}">{{ opts.verbose_name_plural|capfirst }}</a>
+    &rsaquo; {{ title }}
+{% endblock breadcrumbs %}
+
+{% block content_title %}
+    {{ opts.verbose_name_plural|capfirst }}|
+    <small>{{ title }}</small>
+    {% if not object.procesado %}
+        <button class="btn btn-warning" id="compra_update_btn_id" data-toggle="modal" data-target="#exampleModal"
+                data-action="{% url 'compra:compra_update' object.id %}"><i
+                class="fa fa-edit"></i>
+        </button>
+
+        {% if procesador %}
+            <a href="{% url 'compra:compra_process' object.id %}" class="btn btn-primary" title="Procesar Comprobante">
+                <i class="fa fa-save"></i>
+            </a>
+        {% endif %}
+
+    {% else %}
+        <label for="" class="label label-success">Procesado</label>
+    {% endif %}
+
+{% endblock content_title %}
+
+{% block content %}
+
+    <table class="table">
+        <tr>
+            <th>Proveedor</th>
+            <td>{{ object.proveedor }}</td>
+            <th>
+                Base Imponible
+            </th>
+            <td><label class="label label-info">S.</label> {{ object.base_imponible }}</td>
+        </tr>
+        <tr>
+            <th>Nro Doc</th>
+            <td>{{ object.nro_comprobante }}</td>
+            <th>Igv</th>
+            <td><label class="label label-info">S.</label> {{ object.igv }}</td>
+        </tr>
+        <tr>
+            <th>Tipo Comprobante</th>
+            <td>{{ object.tipo_comprobante }}</td>
+            <th>Total</th>
+            <td><strong><label class="label label-info">S.</label> {{ object.total }}</strong></td>
+        </tr>
+    </table>
+
+    <div id="content_detalle_id">
+        <h3>Detalle Comprobante</h3>
+        <div id="content_detalle_data_id" data-action="{% url 'compra:compradetalle_list' object.id %}"></div>
+        <div id="content_detalle_form_id"></div>
+
+        {% if not object.procesado %}
+            <button id="add_detalle_id" data-action="{% url 'compra:compradetalle_add' object.id %}"
+                    class="btn btn-info center-block"><i
+                    class="fa fa-plus"></i></button>
+        {% endif %}
+
+
+    </div>
+
+    {# Modal Form Edit #}
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+                </div>
+                <div class="modal-body" id="form_update_id">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+
+{% block extrajs %}
+    <script>
+        $(document).ready(function () {
+            var url = $("#content_detalle_data_id").data('action');
+
+            $.ajax({
+                url: url,
+            }).done(function (data) {
+                $("#content_detalle_data_id").html(data);
+            });
+        });
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var url = $("#compra_update_btn_id").data('action');
+
+
+            $.ajax({
+                url: url,
+            }).done(function (data) {
+                $("#form_update_id").html(data);
+            });
+        });
+    </script>
+    <script>
+        $('#add_detalle_id').click(function () {
+            var url = $(this).data('action');
+            $.ajax({
+                url: url,
+            }).done(function (data) {
+                $("#content_detalle_form_id").html(data);
+            });
+        });
+    </script>
+
+{% endblock extrajs %}
+

@@ -1,0 +1,167 @@
+{% extends "base/base_back.html" %}
+{% load qr_code static %}
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">Inicio</a>
+    &rsaquo; {{ title }}
+{% endblock %}
+{% block customcss %}
+    <style>
+    .table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+}
+    </style>
+{% endblock %}
+{% block content_title %}
+    {{ opts.verbose_name_plural|capfirst }}
+    <small>{{ title }} {{ object.created_at }}</small>
+{% endblock %}
+{% block content %}
+
+    <div ng-app="myApp">
+        <div ng-controller="boletaCtrl as ctrl">
+            <table class="table table-borderless">
+                <tr>
+                    <td colspan="2">
+                        <table class="table borderless">
+                            <tr>
+                                <th class="text-center">
+                                    <h3>
+                                        {{ empresa.nombre }}
+                                    </h3>
+                                    <h6>{{ empresa.direccion }}</h6>
+
+                                </th>
+                            </tr>
+                        </table>
+                    </td>
+                    <td colspan="2">
+                        <table class="table borderless">
+                            <tr>
+                                <th class="text-center">{{ object.tipo_comprobante.descripcion|upper }} ELECTRONICA</th>
+                            </tr>
+                            <tr>
+                                <th class="text-center"><p>RUC: {{ empresa.nro_ruc }}</p></th>
+                            </tr>
+                            <tr>
+                                <th class="text-center">{{ object.serie.serie }} - {{ object.nro_correlativo }}</th>
+                            </tr>
+
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Señor</td>
+                    <td colspan="3">{{ object.cliente.nombres }} {{ object.cliente.apellidos }}</td>
+                </tr>
+                <tr>
+                    <td>Dirección</td>
+                    <td colspan="3">{{ object.cliente.direccion }}</td>
+                </tr>
+                <tr>
+                    <td>Documento de Identidad</td>
+                    <td>{{ object.cliente.nro_documento }}</td>
+                    <td>Fecha</td>
+                    <td> {{ object.created_at|date:'d/m/Y' }}</td>
+                </tr>
+            </table>
+
+            <div class="container-overflow">
+                <table id="equipos_id"
+                       class="table table-bordered table-hover table-striped table-condensed table-responsive">
+
+                    <thead>
+                    <tr>
+                        <th class="col-hidden">Cantidad</th>
+                        <th class="col-hidden">Descripción</th>
+                        <th class="col-hidden">Precio Unitario</th>
+                        <th class="col-hidden">Importe</th>
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for producto in productos_generales %}
+                        <tr>
+
+
+                            <td>{{ producto.cantidad }}</td>
+                            <td width="70%">{{ producto.equipo__producto__producto_general__codigo }}:
+
+                                {% for e in producto.equipos %}
+
+
+                                    {% if forloop.last %}
+                                        {{ e.imei }}
+                                    {% else %}
+                                        {{ e.imei }},
+                                    {% endif %}
+
+                                {% endfor %}
+
+                            </td>
+
+
+                            <td align="right" >{{ producto.precio_unitario }}</td>
+                            <td align="right">{{ producto.precio_total }}</td>
+                        </tr>
+
+                    {% endfor %}
+                    <tr>
+                        <td colspan="4"><br></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" colspan="2" class="text-center">
+                            <img src="{{ qr_url }}" alt="" width="150">
+                            <br>
+
+                            SON: {{ object.monto_texto }} {{ empresa.nombre_moneda }}
+
+                        </td>
+                        <td  class="text-right">Valor de Venta</td>
+                        <th class="text-right">{{ object.base_imponible }}</th>
+                    </tr>
+                    <tr>
+                        <td class="text-right">Igv</td>
+                        <th class="text-right">{{ object.igv }}</th>
+                    </tr>
+                    <tr>
+                        <td  class="text-right">Total</td>
+                        <th class="text-right">{{ object.total }}</th>
+                    </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+
+
+            <div class="text-center">
+
+                <a class="printPage btn btn-primary hidden-print " href="#"><i class="fa fa-print"></i> Imprimir</a>
+                <button class="printPage btn btn-primary" ng-click="ctrl.exportPdf('{{ object.id }}')" href="#"><i
+                        class="fa fa-file-pdf-o"></i> pdf
+                </button>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block customjs %}
+    <script src="{% static 'bower/qrious/dist/qrious.min.js' %}"></script>
+    <script src="{% static 'venta/venta/boletadetailctrl.js' %}"></script>
+
+    <script>
+        $('a.printPage').click(function () {
+            $("#equipos_id").removeClass();
+            $("#equipos_id").addClass("table");
+            window.print();
+            return false;
+        });
+    </script>
+{% endblock %}

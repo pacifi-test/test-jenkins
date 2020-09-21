@@ -1,0 +1,2077 @@
+COD. DPTO.,COD. PROVINCIA,COD. DISTRITO,NOMBRE DE UBIGEO
+01,00,00,Amazonas
+01,01,00,Chachapoyas
+01,01,01,Chachapoyas
+01,01,02,Asuncion
+01,01,03,Balsas
+01,01,04,Cheto
+01,01,05,Chiliquin
+01,01,06,Chuquibamba
+01,01,07,Granada
+01,01,08,Huancas
+01,01,09,La Jalca
+01,01,10,Leimebamba
+01,01,11,Levanto
+01,01,12,Magdalena
+01,01,13,Mariscal Castilla
+01,01,14,Molinopampa
+01,01,15,Montevideo
+01,01,16,Olleros
+01,01,17,Quinjalca
+01,01,18,San Francisco de Daguas
+01,01,19,San Isidro de Maino
+01,01,20,Soloco
+01,01,21,Sonche
+01,02,00,Bagua
+01,02,01,Bagua
+01,02,02,Aramango
+01,02,03,Copallin
+01,02,04,El Parco
+01,02,05,Imaza
+01,02,06,La Peca
+01,03,00,Bongara
+01,03,01,Jumbilla
+01,03,02,Chisquilla
+01,03,03,Churuja
+01,03,04,Corosha
+01,03,05,Cuispes
+01,03,06,Florida
+01,03,07,Jazán
+01,03,08,Recta
+01,03,09,San Carlos
+01,03,10,Shipasbamba
+01,03,11,Valera
+01,03,12,Yambrasbamba
+01,04,00,Condorcanqui
+01,04,01,Nieva
+01,04,02,El Cenepa
+01,04,03,Rio Santiago
+01,05,00,Luya
+01,05,01,Lamud
+01,05,02,Camporredondo
+01,05,03,Cocabamba
+01,05,04,Colcamar
+01,05,05,Conila
+01,05,06,Inguilpata
+01,05,07,Longuita
+01,05,08,Lonya Chico
+01,05,09,Luya
+01,05,10,Luya Viejo
+01,05,11,Maria
+01,05,12,Ocalli
+01,05,13,Ocumal
+01,05,14,Pisuquia
+01,05,15,Providencia
+01,05,16,San Cristobal
+01,05,17,San Francisco del Yeso
+01,05,18,San Jeronimo
+01,05,19,San Juan de Lopecancha
+01,05,20,Santa Catalina
+01,05,21,Santo Tomas
+01,05,22,Tingo
+01,05,23,Trita
+01,06,00,Rodriguez de Mendoza
+01,06,01,San Nicolas
+01,06,02,Chirimoto
+01,06,03,Cochamal
+01,06,04,Huambo
+01,06,05,Limabamba
+01,06,06,Longar
+01,06,07,Mariscal Benavides
+01,06,08,Milpuc
+01,06,09,Omia
+01,06,10,Santa Rosa
+01,06,11,Totora
+01,06,12,Vista Alegre
+01,07,00,Utcubamba
+01,07,01,Bagua Grande
+01,07,02,Cajaruro
+01,07,03,Cumba
+01,07,04,El Milagro
+01,07,05,Jamalca
+01,07,06,Lonya Grande
+01,07,07,Yamon
+02,00,00,Ancash
+02,01,00,Huaraz
+02,01,01,Huaraz
+02,01,02,Cochabamba
+02,01,03,Colcabamba
+02,01,04,Huanchay
+02,01,05,Independencia
+02,01,06,Jangas
+02,01,07,La Libertad
+02,01,08,Olleros
+02,01,09,Pampas
+02,01,10,Pariacoto
+02,01,11,Pira
+02,01,12,Tarica
+02,02,00,Aija
+02,02,01,Aija
+02,02,02,Coris
+02,02,03,Huacllan
+02,02,04,La Merced
+02,02,05,Succha
+02,03,00,Antonio Raymondi
+02,03,01,Llamellin
+02,03,02,Aczo
+02,03,03,Chaccho
+02,03,04,Chingas
+02,03,05,Mirgas
+02,03,06,San Juan de Rontoy
+02,04,00,Asuncion
+02,04,01,Chacas
+02,04,02,Acochaca
+02,05,00,Bolognesi
+02,05,01,Chiquian
+02,05,02,Abelardo Pardo Lezameta
+02,05,03,Antonio Raymondi
+02,05,04,Aquia
+02,05,05,Cajacay
+02,05,06,Canis
+02,05,07,Colquioc
+02,05,08,Huallanca
+02,05,09,Huasta
+02,05,10,Huayllacayan
+02,05,11,La Primavera
+02,05,12,Mangas
+02,05,13,Pacllon
+02,05,14,San Miguel de Corpanqui
+02,05,15,Ticllos
+02,06,00,Carhuaz
+02,06,01,Carhuaz
+02,06,02,Acopampa
+02,06,03,Amashca
+02,06,04,Anta
+02,06,05,Ataquero
+02,06,06,Marcara
+02,06,07,Pariahuanca
+02,06,08,San Miguel de Aco
+02,06,09,Shilla
+02,06,10,Tinco
+02,06,11,Yungar
+02,07,00,Carlos Fermin Fitzcarrald
+02,07,01,San Luis
+02,07,02,San Nicolas
+02,07,03,Yauya
+02,08,00,Casma
+02,08,01,Casma
+02,08,02,Buena Vista Alta
+02,08,03,Comandante Noel
+02,08,04,Yautan
+02,09,00,Corongo
+02,09,01,Corongo
+02,09,02,Aco
+02,09,03,Bambas
+02,09,04,Cusca
+02,09,05,La Pampa
+02,09,06,Yanac
+02,09,07,Yupan
+02,10,00,Huari
+02,10,01,Huari
+02,10,02,Anra
+02,10,03,Cajay
+02,10,04,Chavin de Huantar
+02,10,05,Huacachi
+02,10,06,Huacchis
+02,10,07,Huachis
+02,10,08,Huantar
+02,10,09,Masin
+02,10,10,Paucas
+02,10,11,Ponto
+02,10,12,Rahuapampa
+02,10,13,Rapayan
+02,10,14,San Marcos
+02,10,15,San Pedro de Chana
+02,10,16,Uco
+02,11,00,Huarmey
+02,11,01,Huarmey
+02,11,02,Cochapeti
+02,11,03,Culebras
+02,11,04,Huayan
+02,11,05,Malvas
+02,12,00,Huaylas
+02,12,01,Caraz
+02,12,02,Huallanca
+02,12,03,Huata
+02,12,04,Huaylas
+02,12,05,Mato
+02,12,06,Pamparomas
+02,12,07,Pueblo Libre
+02,12,08,Santa Cruz
+02,12,09,Santo Toribio
+02,12,10,Yuracmarca
+02,13,00,Mariscal Luzuriaga
+02,13,01,Piscobamba
+02,13,02,Casca
+02,13,03,Eleazar Guzman Barron
+02,13,04,Fidel Olivas Escudero
+02,13,05,Llama
+02,13,06,Llumpa
+02,13,07,Lucma
+02,13,08,Musga
+02,14,00,Ocros
+02,14,01,Ocros
+02,14,02,Acas
+02,14,03,Cajamarquilla
+02,14,04,Carhuapampa
+02,14,05,Cochas
+02,14,06,Congas
+02,14,07,Llipa
+02,14,08,San Cristobal de Rajan
+02,14,09,San Pedro
+02,14,10,Santiago de Chilcas
+02,15,00,Pallasca
+02,15,01,Cabana
+02,15,02,Bolognesi
+02,15,03,Conchucos
+02,15,04,Huacaschuque
+02,15,05,Huandoval
+02,15,06,Lacabamba
+02,15,07,Llapo
+02,15,08,Pallasca
+02,15,09,Pampas
+02,15,10,Santa Rosa
+02,15,11,Tauca
+02,16,00,Pomabamba
+02,16,01,Pomabamba
+02,16,02,Huayllan
+02,16,03,Parobamba
+02,16,04,Quinuabamba
+02,17,00,Recuay
+02,17,01,Recuay
+02,17,02,Catac
+02,17,03,Cotaparaco
+02,17,04,Huayllapampa
+02,17,05,Llacllin
+02,17,06,Marca
+02,17,07,Pampas Chico
+02,17,08,Pararin
+02,17,09,Tapacocha
+02,17,10,Ticapampa
+02,18,00,Santa
+02,18,01,Chimbote
+02,18,02,Caceres del Peru
+02,18,03,Coishco
+02,18,04,Macate
+02,18,05,Moro
+02,18,06,Nepeña
+02,18,07,Samanco
+02,18,08,Santa
+02,18,09,Nuevo Chimbote
+02,19,00,Sihuas
+02,19,01,Sihuas
+02,19,02,Acobamba
+02,19,03,Alfonso Ugarte
+02,19,04,Cashapampa
+02,19,05,Chingalpo
+02,19,06,Huayllabamba
+02,19,07,Quiches
+02,19,08,Ragash
+02,19,09,San Juan
+02,19,10,Sicsibamba
+02,20,00,Yungay
+02,20,01,Yungay
+02,20,02,Cascapara
+02,20,03,Mancos
+02,20,04,Matacoto
+02,20,05,Quillo
+02,20,06,Ranrahirca
+02,20,07,Shupluy
+02,20,08,Yanama
+03,00,00,Apurimac
+03,01,00,Abancay
+03,01,01,Abancay
+03,01,02,Chacoche
+03,01,03,Circa
+03,01,04,Curahuasi
+03,01,05,Huanipaca
+03,01,06,Lambrama
+03,01,07,Pichirhua
+03,01,08,San Pedro de Cachora
+03,01,09,Tamburco
+03,02,00,Andahuaylas
+03,02,01,Andahuaylas
+03,02,02,Andarapa
+03,02,03,Chiara
+03,02,04,Huancarama
+03,02,05,Huancaray
+03,02,06,Huayana
+03,02,07,Kishuara
+03,02,08,Pacobamba
+03,02,09,Pacucha
+03,02,10,Pampachiri
+03,02,11,Pomacocha
+03,02,12,San Antonio de Cachi
+03,02,13,San Jeronimo
+03,02,14,San Miguel de Chaccrampa
+03,02,15,Santa Maria de Chicmo
+03,02,16,Talavera
+03,02,17,Tumay Huaraca
+03,02,18,Turpo
+03,02,19,Kaquiabamba
+03,03,00,Antabamba
+03,03,01,Antabamba
+03,03,02,El Oro
+03,03,03,Huaquirca
+03,03,04,Juan Espinoza Medrano
+03,03,05,Oropesa
+03,03,06,Pachaconas
+03,03,07,Sabaino
+03,04,00,Aymaraes
+03,04,01,Chalhuanca
+03,04,02,Capaya
+03,04,03,Caraybamba
+03,04,04,Chapimarca
+03,04,05,Colcabamba
+03,04,06,Cotaruse
+03,04,07,Huayllo
+03,04,08,Justo Apu Sahuaraura
+03,04,09,Lucre
+03,04,10,Pocohuanca
+03,04,11,San Juan de Chacña
+03,04,12,Sañayca
+03,04,13,Soraya
+03,04,14,Tapairihua
+03,04,15,Tintay
+03,04,16,Toraya
+03,04,17,Yanaca
+03,05,00,Cotabambas
+03,05,01,Tambobamba
+03,05,02,Cotabambas
+03,05,03,Coyllurqui
+03,05,04,Haquira
+03,05,05,Mara
+03,05,06,Challhuahuacho
+03,06,00,Chincheros
+03,06,01,Chincheros
+03,06,02,Anco-Huallo
+03,06,03,Cocharcas
+03,06,04,Huaccana
+03,06,05,Ocobamba
+03,06,06,Ongoy
+03,06,07,Uranmarca
+03,06,08,Ranracancha
+03,07,00,Grau
+03,07,01,Chuquibambilla
+03,07,02,Curpahuasi
+03,07,03,Gamarra
+03,07,04,Huayllati
+03,07,05,Mamara
+03,07,06,Micaela Bastidas
+03,07,07,Pataypampa
+03,07,08,Progreso
+03,07,09,San Antonio
+03,07,10,Santa Rosa
+03,07,11,Turpay
+03,07,12,Vilcabamba
+03,07,13,Virundo
+03,07,14,Curasco
+04,00,00,Arequipa
+04,01,00,Arequipa
+04,01,01,Arequipa
+04,01,02,Alto Selva Alegre
+04,01,03,Cayma
+04,01,04,Cerro Colorado
+04,01,05,Characato
+04,01,06,Chiguata
+04,01,07,Jacobo Hunter
+04,01,08,La Joya
+04,01,09,Mariano Melgar
+04,01,10,Miraflores
+04,01,11,Mollebaya
+04,01,12,Paucarpata
+04,01,13,Pocsi
+04,01,14,Polobaya
+04,01,15,Quequeña
+04,01,16,Sabandia
+04,01,17,Sachaca
+04,01,18,San Juan de Siguas
+04,01,19,San Juan de Tarucani
+04,01,20,Santa Isabel de Siguas
+04,01,21,Santa Rita de Siguas
+04,01,22,Socabaya
+04,01,23,Tiabaya
+04,01,24,Uchumayo
+04,01,25,Vitor
+04,01,26,Yanahuara
+04,01,27,Yarabamba
+04,01,28,Yura
+04,01,29,Jose Luis Bustamante y Rivero
+04,02,00,Camana
+04,02,01,Camana
+04,02,02,Jose Maria Quimper
+04,02,03,Mariano Nicolas Valcarcel
+04,02,04,Mariscal Caceres
+04,02,05,Nicolas de Pierola
+04,02,06,Ocoña
+04,02,07,Quilca
+04,02,08,Samuel Pastor
+04,03,00,Caraveli
+04,03,01,Caraveli
+04,03,02,Acari
+04,03,03,Atico
+04,03,04,Atiquipa
+04,03,05,Bella Union
+04,03,06,Cahuacho
+04,03,07,Chala
+04,03,08,Chaparra
+04,03,09,Huanuhuanu
+04,03,10,Jaqui
+04,03,11,Lomas
+04,03,12,Quicacha
+04,03,13,Yauca
+04,04,00,Castilla
+04,04,01,Aplao
+04,04,02,Andagua
+04,04,03,Ayo
+04,04,04,Chachas
+04,04,05,Chilcaymarca
+04,04,06,Choco
+04,04,07,Huancarqui
+04,04,08,Machaguay
+04,04,09,Orcopampa
+04,04,10,Pampacolca
+04,04,11,Tipan
+04,04,12,Uñon
+04,04,13,Uraca
+04,04,14,Viraco
+04,05,00,Caylloma
+04,05,01,Chivay
+04,05,02,Achoma
+04,05,03,Cabanaconde
+04,05,04,Callalli
+04,05,05,Caylloma
+04,05,06,Coporaque
+04,05,07,Huambo
+04,05,08,Huanca
+04,05,09,Ichupampa
+04,05,10,Lari
+04,05,11,Lluta
+04,05,12,Maca
+04,05,13,Madrigal
+04,05,14,San Antonio de Chuca
+04,05,15,Sibayo
+04,05,16,Tapay
+04,05,17,Tisco
+04,05,18,Tuti
+04,05,19,Yanque
+04,05,20,Majes
+04,06,00,Condesuyos
+04,06,01,Chuquibamba
+04,06,02,Andaray
+04,06,03,Cayarani
+04,06,04,Chichas
+04,06,05,Iray
+04,06,06,Rio Grande
+04,06,07,Salamanca
+04,06,08,Yanaquihua
+04,07,00,Islay
+04,07,01,Mollendo
+04,07,02,Cocachacra
+04,07,03,Dean Valdivia
+04,07,04,Islay
+04,07,05,Mejia
+04,07,06,Punta de Bombon
+04,08,00,La Union
+04,08,01,Cotahuasi
+04,08,02,Alca
+04,08,03,Charcana
+04,08,04,Huaynacotas
+04,08,05,Pampamarca
+04,08,06,Puyca
+04,08,07,Quechualla
+04,08,08,Sayla
+04,08,09,Tauria
+04,08,10,Tomepampa
+04,08,11,Toro
+05,00,00,Ayacucho
+05,01,00,Huamanga
+05,01,01,Ayacucho
+05,01,02,Acocro
+05,01,03,Acos Vinchos
+05,01,04,Carmen Alto
+05,01,05,Chiara
+05,01,06,Ocros
+05,01,07,Pacaycasa
+05,01,08,Quinua
+05,01,09,San Jose de Ticllas
+05,01,10,San Juan Bautista
+05,01,11,Santiago de Pischa
+05,01,12,Socos
+05,01,13,Tambillo
+05,01,14,Vinchos
+05,01,15,Jesús Nazareno
+05,01,16,Andrés Avelino Cáceres Dorregay
+05,02,00,Cangallo
+05,02,01,Cangallo
+05,02,02,Chuschi
+05,02,03,Los Morochucos
+05,02,04,Maria Parado de Bellido
+05,02,05,Paras
+05,02,06,Totos
+05,03,00,Huanca Sancos
+05,03,01,Sancos
+05,03,02,Carapo
+05,03,03,Sacsamarca
+05,03,04,Santiago de Lucanamarca
+05,04,00,Huanta
+05,04,01,Huanta
+05,04,02,Ayahuanco
+05,04,03,Huamanguilla
+05,04,04,Iguain
+05,04,05,Luricocha
+05,04,06,Santillana
+05,04,07,Sivia
+05,04,08,Llochegua
+05,04,09,Canayre
+05,04,10,Uchuraccay
+05,04,11,Pucacolpa
+05,05,00,La Mar
+05,05,01,San Miguel
+05,05,02,Anco
+05,05,03,Ayna
+05,05,04,Chilcas
+05,05,05,Chungui
+05,05,06,Luis Carranza
+05,05,07,Santa Rosa
+05,05,08,Tambo
+05,05,09,Samugari
+05,05,10,Anchihuay
+05,06,00,Lucanas
+05,06,01,Puquio
+05,06,02,Aucara
+05,06,03,Cabana
+05,06,04,Carmen Salcedo
+05,06,05,Chaviña
+05,06,06,Chipao
+05,06,07,Huac-Huas
+05,06,08,Laramate
+05,06,09,Leoncio Prado
+05,06,10,Llauta
+05,06,11,Lucanas
+05,06,12,Ocaña
+05,06,13,Otoca
+05,06,14,Saisa
+05,06,15,San Cristobal
+05,06,16,San Juan
+05,06,17,San Pedro
+05,06,18,San Pedro de Palco
+05,06,19,Sancos
+05,06,20,Santa Ana de Huaycahuacho
+05,06,21,Santa Lucia
+05,07,00,Parinacochas
+05,07,01,Coracora
+05,07,02,Chumpi
+05,07,03,Coronel Castañeda
+05,07,04,Pacapausa
+05,07,05,Pullo
+05,07,06,Puyusca
+05,07,07,San Francisco de Ravacayco
+05,07,08,Upahuacho
+05,08,00,Paucar del Sara Sara
+05,08,01,Pausa
+05,08,02,Colta
+05,08,03,Corculla
+05,08,04,Lampa
+05,08,05,Marcabamba
+05,08,06,Oyolo
+05,08,07,Pararca
+05,08,08,San Javier de Alpabamba
+05,08,09,San Jose de Ushua
+05,08,10,Sara Sara
+05,09,00,Sucre
+05,09,01,Querobamba
+05,09,02,Belen
+05,09,03,Chalcos
+05,09,04,Chilcayoc
+05,09,05,Huacaña
+05,09,06,Morcolla
+05,09,07,Paico
+05,09,08,San Pedro de Larcay
+05,09,09,San Salvador de Quije
+05,09,10,Santiago de Paucaray
+05,09,11,Soras
+05,10,00,Victor Fajardo
+05,10,01,Huancapi
+05,10,02,Alcamenca
+05,10,03,Apongo
+05,10,04,Asquipata
+05,10,05,Canaria
+05,10,06,Cayara
+05,10,07,Colca
+05,10,08,Huamanquiquia
+05,10,09,Huancaraylla
+05,10,10,Huaya
+05,10,11,Sarhua
+05,10,12,Vilcanchos
+05,11,00,Vilcas Huaman
+05,11,01,Vilcas Huaman
+05,11,02,Accomarca
+05,11,03,Carhuanca
+05,11,04,Concepcion
+05,11,05,Huambalpa
+05,11,06,Independencia
+05,11,07,Saurama
+05,11,08,Vischongo
+06,00,00,Cajamarca
+06,01,00,Cajamarca
+06,01,01,Cajamarca
+06,01,02,Asuncion
+06,01,03,Chetilla
+06,01,04,Cospan
+06,01,05,Encañada
+06,01,06,Jesus
+06,01,07,Llacanora
+06,01,08,Los Baños del Inca
+06,01,09,Magdalena
+06,01,10,Matara
+06,01,11,Namora
+06,01,12,San Juan
+06,02,00,Cajabamba
+06,02,01,Cajabamba
+06,02,02,Cachachi
+06,02,03,Condebamba
+06,02,04,Sitacocha
+06,03,00,Celendin
+06,03,01,Celendin
+06,03,02,Chumuch
+06,03,03,Cortegana
+06,03,04,Huasmin
+06,03,05,Jorge Chavez
+06,03,06,Jose Galvez
+06,03,07,Miguel Iglesias
+06,03,08,Oxamarca
+06,03,09,Sorochuco
+06,03,10,Sucre
+06,03,11,Utco
+06,03,12,La Libertad de Pallan
+06,04,00,Chota
+06,04,01,Chota
+06,04,02,Anguia
+06,04,03,Chadin
+06,04,04,Chiguirip
+06,04,05,Chimban
+06,04,06,Choropampa
+06,04,07,Cochabamba
+06,04,08,Conchan
+06,04,09,Huambos
+06,04,10,Lajas
+06,04,11,Llama
+06,04,12,Miracosta
+06,04,13,Paccha
+06,04,14,Pion
+06,04,15,Querocoto
+06,04,16,San Juan de Licupis
+06,04,17,Tacabamba
+06,04,18,Tocmoche
+06,04,19,Chalamarca
+06,05,00,Contumaza
+06,05,01,Contumaza
+06,05,02,Chilete
+06,05,03,Cupisnique
+06,05,04,Guzmango
+06,05,05,San Benito
+06,05,06,Santa Cruz de Toled
+06,05,07,Tantarica
+06,05,08,Yonan
+06,06,00,Cutervo
+06,06,01,Cutervo
+06,06,02,Callayuc
+06,06,03,Choros
+06,06,04,Cujillo
+06,06,05,La Ramada
+06,06,06,Pimpingos
+06,06,07,Querocotillo
+06,06,08,San Andres de Cutervo
+06,06,09,San Juan de Cutervo
+06,06,10,San Luis de Lucma
+06,06,11,Santa Cruz
+06,06,12,Santo Domingo de la Capilla
+06,06,13,Santo Tomas
+06,06,14,Socota
+06,06,15,Toribio Casanova
+06,07,00,Hualgayoc
+06,07,01,Bambamarca
+06,07,02,Chugur
+06,07,03,Hualgayoc
+06,08,00,Jaen
+06,08,01,Jaen
+06,08,02,Bellavista
+06,08,03,Chontali
+06,08,04,Colasay
+06,08,05,Huabal
+06,08,06,Las Pirias
+06,08,07,Pomahuaca
+06,08,08,Pucara
+06,08,09,Sallique
+06,08,10,San Felipe
+06,08,11,San Jose del Alto
+06,08,12,Santa Rosa
+06,09,00,San Ignacio
+06,09,01,San Ignacio
+06,09,02,Chirinos
+06,09,03,Huarango
+06,09,04,La Coipa
+06,09,05,Namballe
+06,09,06,San Jose de Lourdes
+06,09,07,Tabaconas
+06,10,00,San Marcos
+06,10,01,Pedro Galvez
+06,10,02,Chancay
+06,10,03,Eduardo Villanueva
+06,10,04,Gregorio Pita
+06,10,05,Ichocan
+06,10,06,Jose Manuel Quiroz
+06,10,07,Jose Sabogal
+06,11,00,San Miguel
+06,11,01,San Miguel
+06,11,02,Bolivar
+06,11,03,Calquis
+06,11,04,Catilluc
+06,11,05,El Prado
+06,11,06,La Florida
+06,11,07,Llapa
+06,11,08,Nanchoc
+06,11,09,Niepos
+06,11,10,San Gregorio
+06,11,11,San Silvestre de Cochan
+06,11,12,Tongod
+06,11,13,Union Agua Blanca
+06,12,00,San Pablo
+06,12,01,San Pablo
+06,12,02,San Bernardino
+06,12,03,San Luis
+06,12,04,Tumbaden
+06,13,00,Santa Cruz
+06,13,01,Santa Cruz
+06,13,02,Andabamba
+06,13,03,Catache
+06,13,04,Chancaybaños
+06,13,05,La Esperanza
+06,13,06,Ninabamba
+06,13,07,Pulan
+06,13,08,Saucepampa
+06,13,09,Sexi
+06,13,10,Uticyacu
+06,13,11,Yauyucan
+07,00,00,Callao
+07,01,00,Prov. Const. del Callao
+07,01,01,Callao
+07,01,02,Bellavista
+07,01,03,Carmen de la Legua Reynoso
+07,01,04,La Perla
+07,01,05,La Punta
+07,01,06,Ventanilla
+07,01,07,Mi Perú
+08,00,00,Cusco
+08,01,00,Cusco
+08,01,01,Cusco
+08,01,02,Ccorca
+08,01,03,Poroy
+08,01,04,San Jeronimo
+08,01,05,San Sebastian
+08,01,06,Santiago
+08,01,07,Saylla
+08,01,08,Wanchaq
+08,02,00,Acomayo
+08,02,01,Acomayo
+08,02,02,Acopia
+08,02,03,Acos
+08,02,04,Mosoc Llacta
+08,02,05,Pomacanchi
+08,02,06,Rondocan
+08,02,07,Sangarara
+08,03,00,Anta
+08,03,01,Anta
+08,03,02,Ancahuasi
+08,03,03,Cachimayo
+08,03,04,Chinchaypujio
+08,03,05,Huarocondo
+08,03,06,Limatambo
+08,03,07,Mollepata
+08,03,08,Pucyura
+08,03,09,Zurite
+08,04,00,Calca
+08,04,01,Calca
+08,04,02,Coya
+08,04,03,Lamay
+08,04,04,Lares
+08,04,05,Pisac
+08,04,06,San Salvador
+08,04,07,Taray
+08,04,08,Yanatile
+08,05,00,Canas
+08,05,01,Yanaoca
+08,05,02,Checca
+08,05,03,Kunturkanki
+08,05,04,Langui
+08,05,05,Layo
+08,05,06,Pampamarca
+08,05,07,Quehue
+08,05,08,Tupac Amaru
+08,06,00,Canchis
+08,06,01,Sicuani
+08,06,02,Checacupe
+08,06,03,Combapata
+08,06,04,Marangani
+08,06,05,Pitumarca
+08,06,06,San Pablo
+08,06,07,San Pedro
+08,06,08,Tinta
+08,07,00,Chumbivilcas
+08,07,01,Santo Tomas
+08,07,02,Capacmarca
+08,07,03,Chamaca
+08,07,04,Colquemarca
+08,07,05,Livitaca
+08,07,06,Llusco
+08,07,07,Quiñota
+08,07,08,Velille
+08,08,00,Espinar
+08,08,01,Espinar
+08,08,02,Condoroma
+08,08,03,Coporaque
+08,08,04,Ocoruro
+08,08,05,Pallpata
+08,08,06,Pichigua
+08,08,07,Suyckutambo
+08,08,08,Alto Pichigua
+08,09,00,La Convencion
+08,09,01,Santa Ana
+08,09,02,Echarate
+08,09,03,Huayopata
+08,09,04,Maranura
+08,09,05,Ocobamba
+08,09,06,Quellouno
+08,09,07,Kimbiri
+08,09,08,Santa Teresa
+08,09,09,Vilcabamba
+08,09,10,Pichari
+08,09,11,Inkawasi
+08,09,12,Villa Virgen
+08,10,00,Paruro
+08,10,01,Paruro
+08,10,02,Accha
+08,10,03,Ccapi
+08,10,04,Colcha
+08,10,05,Huanoquite
+08,10,06,Omacha
+08,10,07,Paccaritambo
+08,10,08,Pillpinto
+08,10,09,Yaurisque
+08,11,00,Paucartambo
+08,11,01,Paucartambo
+08,11,02,Caicay
+08,11,03,Challabamba
+08,11,04,Colquepata
+08,11,05,Huancarani
+08,11,06,Kosñipata
+08,12,00,Quispicanchi
+08,12,01,Urcos
+08,12,02,Andahuaylillas
+08,12,03,Camanti
+08,12,04,Ccarhuayo
+08,12,05,Ccatca
+08,12,06,Cusipata
+08,12,07,Huaro
+08,12,08,Lucre
+08,12,09,Marcapata
+08,12,10,Ocongate
+08,12,11,Oropesa
+08,12,12,Quiquijana
+08,13,00,Urubamba
+08,13,01,Urubamba
+08,13,02,Chinchero
+08,13,03,Huayllabamba
+08,13,04,Machupicchu
+08,13,05,Maras
+08,13,06,Ollantaytambo
+08,13,07,Yucay
+09,00,00,Huancavelica
+09,01,00,Huancavelica
+09,01,01,Huancavelica
+09,01,02,Acobambilla
+09,01,03,Acoria
+09,01,04,Conayca
+09,01,05,Cuenca
+09,01,06,Huachocolpa
+09,01,07,Huayllahuara
+09,01,08,Izcuchaca
+09,01,09,Laria
+09,01,10,Manta
+09,01,11,Mariscal Caceres
+09,01,12,Moya
+09,01,13,Nuevo Occoro
+09,01,14,Palca
+09,01,15,Pilchaca
+09,01,16,Vilca
+09,01,17,Yauli
+09,01,18,Ascensión
+09,01,19,Huando
+09,02,00,Acobamba
+09,02,01,Acobamba
+09,02,02,Andabamba
+09,02,03,Anta
+09,02,04,Caja
+09,02,05,Marcas
+09,02,06,Paucara
+09,02,07,Pomacocha
+09,02,08,Rosario
+09,03,00,Angaraes
+09,03,01,Lircay
+09,03,02,Anchonga
+09,03,03,Callanmarca
+09,03,04,Ccochaccasa
+09,03,05,Chincho
+09,03,06,Congalla
+09,03,07,Huanca-Huanca
+09,03,08,Huayllay Grande
+09,03,09,Julcamarca
+09,03,10,San Antonio de Antaparco
+09,03,11,Santo Tomas de Pata
+09,03,12,Secclla
+09,04,00,Castrovirreyna
+09,04,01,Castrovirreyna
+09,04,02,Arma
+09,04,03,Aurahua
+09,04,04,Capillas
+09,04,05,Chupamarca
+09,04,06,Cocas
+09,04,07,Huachos
+09,04,08,Huamatambo
+09,04,09,Mollepampa
+09,04,10,San Juan
+09,04,11,Santa Ana
+09,04,12,Tantara
+09,04,13,Ticrapo
+09,05,00,Churcampa
+09,05,01,Churcampa
+09,05,02,Anco
+09,05,03,Chinchihuasi
+09,05,04,El Carmen
+09,05,05,La Merced
+09,05,06,Locroja
+09,05,07,Paucarbamba
+09,05,08,San Miguel de Mayocc
+09,05,09,San Pedro de Coris
+09,05,10,Pachamarca
+09,05,11,Cosme
+09,06,00,Huaytara
+09,06,01,Huaytara
+09,06,02,Ayavi
+09,06,03,Cordova
+09,06,04,Huayacundo Arma
+09,06,05,Laramarca
+09,06,06,Ocoyo
+09,06,07,Pilpichaca
+09,06,08,Querco
+09,06,09,Quito-Arma
+09,06,10,San Antonio de Cusicancha
+09,06,11,San Francisco de Sangayaico
+09,06,12,San Isidro
+09,06,13,Santiago de Chocorvos
+09,06,14,Santiago de Quirahuara
+09,06,15,Santo Domingo de Capillas
+09,06,16,Tambo
+09,07,00,Tayacaja
+09,07,01,Pampas
+09,07,02,Acostambo
+09,07,03,Acraquia
+09,07,04,Ahuaycha
+09,07,05,Colcabamba
+09,07,06,Daniel Hernandez
+09,07,07,Huachocolpa
+09,07,09,Huaribamba
+09,07,10,Ñahuimpuquio
+09,07,11,Pazos
+09,07,13,Quishuar
+09,07,14,Salcabamba
+09,07,15,Salcahuasi
+09,07,16,San Marcos de Rocchac
+09,07,17,Surcubamba
+09,07,18,Tintay Puncu
+10,00,00,Huanuco
+10,01,00,Huanuco
+10,01,01,Huanuco
+10,01,02,Amarilis
+10,01,03,Chinchao
+10,01,04,Churubamba
+10,01,05,Margos
+10,01,06,Quisqui
+10,01,07,San Francisco de Cayran
+10,01,08,San Pedro de Chaulan
+10,01,09,Santa Maria del Valle
+10,01,10,Yarumayo
+10,01,11,Pillco Marca
+10,01,12,Yacus
+10,02,00,Ambo
+10,02,01,Ambo
+10,02,02,Cayna
+10,02,03,Colpas
+10,02,04,Conchamarca
+10,02,05,Huacar
+10,02,06,San Francisco
+10,02,07,San Rafael
+10,02,08,Tomay Kichwa
+10,03,00,Dos de Mayo
+10,03,01,La Union
+10,03,07,Chuquis
+10,03,11,Marias
+10,03,13,Pachas
+10,03,16,Quivilla
+10,03,17,Ripan
+10,03,21,Shunqui
+10,03,22,Sillapata
+10,03,23,Yanas
+10,04,00,Huacaybamba
+10,04,01,Huacaybamba
+10,04,02,Canchabamba
+10,04,03,Cochabamba
+10,04,04,Pinra
+10,05,00,Huamalies
+10,05,01,Llata
+10,05,02,Arancay
+10,05,03,Chavin de Pariarca
+10,05,04,Jacas Grande
+10,05,05,Jircan
+10,05,06,Miraflores
+10,05,07,Monzon
+10,05,08,Punchao
+10,05,09,Puños
+10,05,10,Singa
+10,05,11,Tantamayo
+10,06,00,Leoncio Prado
+10,06,01,Rupa-Rupa
+10,06,02,Daniel Alomias Robles
+10,06,03,Hermilio Valdizan
+10,06,04,Jose Crespo y Castillo
+10,06,05,Luyando
+10,06,06,Mariano Damaso Beraun
+10,07,00,Marañon
+10,07,01,Huacrachuco
+10,07,02,Cholon
+10,07,03,San Buenaventura
+10,08,00,Pachitea
+10,08,01,Panao
+10,08,02,Chaglla
+10,08,03,Molino
+10,08,04,Umari
+10,09,00,Puerto Inca
+10,09,01,Puerto Inca
+10,09,02,Codo del Pozuzo
+10,09,03,Honoria
+10,09,04,Tournavista
+10,09,05,Yuyapichis
+10,10,00,Lauricocha
+10,10,01,Jesus
+10,10,02,Baños
+10,10,03,Jivia
+10,10,04,Queropalca
+10,10,05,Rondos
+10,10,06,San Francisco de Asis
+10,10,07,San Miguel de Cauri
+10,11,00,Yarowilca
+10,11,01,Chavinillo
+10,11,02,Cahuac
+10,11,03,Chacabamba
+10,11,04,Chupan
+10,11,05,Jacas Chico
+10,11,06,Obas
+10,11,07,Pampamarca
+10,11,08,Choras
+11,00,00,Ica
+11,01,00,Ica
+11,01,01,Ica
+11,01,02,La Tinguiña
+11,01,03,Los Aquijes
+11,01,04,Ocucaje
+11,01,05,Pachacutec
+11,01,06,Parcona
+11,01,07,Pueblo Nuevo
+11,01,08,Salas
+11,01,09,San Jose de los Molinos
+11,01,10,San Juan Bautista
+11,01,11,Santiago
+11,01,12,Subtanjalla
+11,01,13,Tate
+11,01,14,Yauca del Rosario
+11,02,00,Chincha
+11,02,01,Chincha Alta
+11,02,02,Alto Laran
+11,02,03,Chavin
+11,02,04,Chincha Baja
+11,02,05,El Carmen
+11,02,06,Grocio Prado
+11,02,07,Pueblo Nuevo
+11,02,08,San Juan de Yanac
+11,02,09,San Pedro de Huacarpana
+11,02,10,Sunampe
+11,02,11,Tambo de Mora
+11,03,00,Nazca
+11,03,01,Nazca
+11,03,02,Changuillo
+11,03,03,El Ingenio
+11,03,04,Marcona
+11,03,05,Vista Alegre
+11,04,00,Palpa
+11,04,01,Palpa
+11,04,02,Llipata
+11,04,03,Rio Grande
+11,04,04,Santa Cruz
+11,04,05,Tibillo
+11,05,00,Pisco
+11,05,01,Pisco
+11,05,02,Huancano
+11,05,03,Humay
+11,05,04,Independencia
+11,05,05,Paracas
+11,05,06,San Andres
+11,05,07,San Clemente
+11,05,08,Tupac Amaru Inca
+12,00,00,Junin
+12,01,00,Huancayo
+12,01,01,Huancayo
+12,01,04,Carhuacallanga
+12,01,05,Chacapampa
+12,01,06,Chicche
+12,01,07,Chilca
+12,01,08,Chongos Alto
+12,01,11,Chupuro
+12,01,12,Colca
+12,01,13,Cullhuas
+12,01,14,El Tambo
+12,01,16,Huacrapuquio
+12,01,17,Hualhuas
+12,01,19,Huancan
+12,01,20,Huasicancha
+12,01,21,Huayucachi
+12,01,22,Ingenio
+12,01,24,Pariahuanca
+12,01,25,Pilcomayo
+12,01,26,Pucara
+12,01,27,Quichuay
+12,01,28,Quilcas
+12,01,29,San Agustin
+12,01,30,San Jeronimo de Tunan
+12,01,32,Saño
+12,01,33,Sapallanga
+12,01,34,Sicaya
+12,01,35,Santo Domingo de Acobamba
+12,01,36,Viques
+12,02,00,Concepcion
+12,02,01,Concepcion
+12,02,02,Aco
+12,02,03,Andamarca
+12,02,04,Chambara
+12,02,05,Cochas
+12,02,06,Comas
+12,02,07,Heroinas Toledo
+12,02,08,Manzanares
+12,02,09,Mariscal Castilla
+12,02,10,Matahuasi
+12,02,11,Mito
+12,02,12,Nueve de Julio
+12,02,13,Orcotuna
+12,02,14,San Jose de Quero
+12,02,15,Santa Rosa de Ocopa
+12,03,00,Chanchamayo
+12,03,01,Chanchamayo
+12,03,02,Perene
+12,03,03,Pichanaqui
+12,03,04,San Luis de Shuaro
+12,03,05,San Ramon
+12,03,06,Vitoc
+12,04,00,Jauja
+12,04,01,Jauja
+12,04,02,Acolla
+12,04,03,Apata
+12,04,04,Ataura
+12,04,05,Canchayllo
+12,04,06,Curicaca
+12,04,07,El Mantaro
+12,04,08,Huamali
+12,04,09,Huaripampa
+12,04,10,Huertas
+12,04,11,Janjaillo
+12,04,12,Julcan
+12,04,13,Leonor Ordoñez
+12,04,14,Llocllapampa
+12,04,15,Marco
+12,04,16,Masma
+12,04,17,Masma Chicche
+12,04,18,Molinos
+12,04,19,Monobamba
+12,04,20,Muqui
+12,04,21,Muquiyauyo
+12,04,22,Paca
+12,04,23,Paccha
+12,04,24,Pancan
+12,04,25,Parco
+12,04,26,Pomacancha
+12,04,27,Ricran
+12,04,28,San Lorenzo
+12,04,29,San Pedro de Chunan
+12,04,30,Sausa
+12,04,31,Sincos
+12,04,32,Tunan Marca
+12,04,33,Yauli
+12,04,34,Yauyos
+12,05,00,Junin
+12,05,01,Junin
+12,05,02,Carhuamayo
+12,05,03,Ondores
+12,05,04,Ulcumayo
+12,06,00,Satipo
+12,06,01,Satipo
+12,06,02,Coviriali
+12,06,03,Llaylla
+12,06,04,Mazamari
+12,06,05,Pampa Hermosa
+12,06,06,Pangoa
+12,06,07,Rio Negro
+12,06,08,Rio Tambo
+12,06,99,Mazamari-Pangoa
+12,07,00,Tarma
+12,07,01,Tarma
+12,07,02,Acobamba
+12,07,03,Huaricolca
+12,07,04,Huasahuasi
+12,07,05,La Union
+12,07,06,Palca
+12,07,07,Palcamayo
+12,07,08,San Pedro de Cajas
+12,07,09,Tapo
+12,08,00,Yauli
+12,08,01,La Oroya
+12,08,02,Chacapalpa
+12,08,03,Huay-Huay
+12,08,04,Marcapomacocha
+12,08,05,Morococha
+12,08,06,Paccha
+12,08,07,Santa Barbara de Carhuacayan
+12,08,08,Santa Rosa de Sacco
+12,08,09,Suitucancha
+12,08,10,Yauli
+12,09,00,Chupaca
+12,09,01,Chupaca
+12,09,02,Ahuac
+12,09,03,Chongos Bajo
+12,09,04,Huachac
+12,09,05,Huamancaca Chico
+12,09,06,San Juan de Iscos
+12,09,07,San Juan de Jarpa
+12,09,08,3 de Diciembre
+12,09,09,Yanacancha
+13,00,00,La Libertad
+13,01,00,Trujillo
+13,01,01,Trujillo
+13,01,02,El Porvenir
+13,01,03,Florencia de Mora
+13,01,04,Huanchaco
+13,01,05,La Esperanza
+13,01,06,Laredo
+13,01,07,Moche
+13,01,08,Poroto
+13,01,09,Salaverry
+13,01,10,Simbal
+13,01,11,Victor Larco Herrera
+13,02,00,Ascope
+13,02,01,Ascope
+13,02,02,Chicama
+13,02,03,Chocope
+13,02,04,Magdalena de Cao
+13,02,05,Paijan
+13,02,06,Razuri
+13,02,07,Santiago de Cao
+13,02,08,Casa Grande
+13,03,00,Bolivar
+13,03,01,Bolivar
+13,03,02,Bambamarca
+13,03,03,Condormarca
+13,03,04,Longotea
+13,03,05,Uchumarca
+13,03,06,Ucuncha
+13,04,00,Chepen
+13,04,01,Chepen
+13,04,02,Pacanga
+13,04,03,Pueblo Nuevo
+13,05,00,Julcan
+13,05,01,Julcan
+13,05,02,Calamarca
+13,05,03,Carabamba
+13,05,04,Huaso
+13,06,00,Otuzco
+13,06,01,Otuzco
+13,06,02,Agallpampa
+13,06,04,Charat
+13,06,05,Huaranchal
+13,06,06,La Cuesta
+13,06,08,Mache
+13,06,10,Paranday
+13,06,11,Salpo
+13,06,13,Sinsicap
+13,06,14,Usquil
+13,07,00,Pacasmayo
+13,07,01,San Pedro de Lloc
+13,07,02,Guadalupe
+13,07,03,Jequetepeque
+13,07,04,Pacasmayo
+13,07,05,San Jose
+13,08,00,Pataz
+13,08,01,Tayabamba
+13,08,02,Buldibuyo
+13,08,03,Chillia
+13,08,04,Huancaspata
+13,08,05,Huaylillas
+13,08,06,Huayo
+13,08,07,Ongon
+13,08,08,Parcoy
+13,08,09,Pataz
+13,08,10,Pias
+13,08,11,Santiago de Challas
+13,08,12,Taurija
+13,08,13,Urpay
+13,09,00,Sanchez Carrion
+13,09,01,Huamachuco
+13,09,02,Chugay
+13,09,03,Cochorco
+13,09,04,Curgos
+13,09,05,Marcabal
+13,09,06,Sanagoran
+13,09,07,Sarin
+13,09,08,Sartimbamba
+13,10,00,Santiago de Chuco
+13,10,01,Santiago de Chuco
+13,10,02,Angasmarca
+13,10,03,Cachicadan
+13,10,04,Mollebamba
+13,10,05,Mollepata
+13,10,06,Quiruvilca
+13,10,07,Santa Cruz de Chuca
+13,10,08,Sitabamba
+13,11,00,Gran Chimu
+13,11,01,Cascas
+13,11,02,Lucma
+13,11,03,Marmot
+13,11,04,Sayapullo
+13,12,00,Viru
+13,12,01,Viru
+13,12,02,Chao
+13,12,03,Guadalupito
+14,00,00,Lambayeque
+14,01,00,Chiclayo
+14,01,01,Chiclayo
+14,01,02,Chongoyape
+14,01,03,Eten
+14,01,04,Eten Puerto
+14,01,05,Jose Leonardo Ortiz
+14,01,06,La Victoria
+14,01,07,Lagunas
+14,01,08,Monsefu
+14,01,09,Nueva Arica
+14,01,10,Oyotun
+14,01,11,Picsi
+14,01,12,Pimentel
+14,01,13,Reque
+14,01,14,Santa Rosa
+14,01,15,Saña
+14,01,16,Cayaltí
+14,01,17,Patapo
+14,01,18,Pomalca
+14,01,19,Pucalá
+14,01,20,Tumán
+14,02,00,Ferreñafe
+14,02,01,Ferreñafe
+14,02,02,Cañaris
+14,02,03,Incahuasi
+14,02,04,Manuel Antonio Mesones Muro
+14,02,05,Pitipo
+14,02,06,Pueblo Nuevo
+14,03,00,Lambayeque
+14,03,01,Lambayeque
+14,03,02,Chochope
+14,03,03,Illimo
+14,03,04,Jayanca
+14,03,05,Mochumi
+14,03,06,Morrope
+14,03,07,Motupe
+14,03,08,Olmos
+14,03,09,Pacora
+14,03,10,Salas
+14,03,11,San Jose
+14,03,12,Tucume
+15,00,00,Lima
+15,01,00,Lima
+15,01,01,Lima
+15,01,02,Ancon
+15,01,03,Ate
+15,01,04,Barranco
+15,01,05,Breña
+15,01,06,Carabayllo
+15,01,07,Chaclacayo
+15,01,08,Chorrillos
+15,01,09,Cieneguilla
+15,01,10,Comas
+15,01,11,El Agustino
+15,01,12,Independencia
+15,01,13,Jesus Maria
+15,01,14,La Molina
+15,01,15,La Victoria
+15,01,16,Lince
+15,01,17,Los Olivos
+15,01,18,Lurigancho
+15,01,19,Lurin
+15,01,20,Magdalena del Mar
+15,01,21,Pueblo Libre (Magdalena Vieja)
+15,01,22,Miraflores
+15,01,23,Pachacamac
+15,01,24,Pucusana
+15,01,25,Puente Piedra
+15,01,26,Punta Hermosa
+15,01,27,Punta Negra
+15,01,28,Rimac
+15,01,29,San Bartolo
+15,01,30,San Borja
+15,01,31,San Isidro
+15,01,32,San Juan de Lurigancho
+15,01,33,San Juan de Miraflores
+15,01,34,San Luis
+15,01,35,San Martin de Porres
+15,01,36,San Miguel
+15,01,37,Santa Anita
+15,01,38,Santa Maria del Mar
+15,01,39,Santa Rosa
+15,01,40,Santiago de Surco
+15,01,41,Surquillo
+15,01,42,Villa El Salvador
+15,01,43,Villa Maria del Triunfo
+15,02,00,Barranca
+15,02,01,Barranca
+15,02,02,Paramonga
+15,02,03,Pativilca
+15,02,04,Supe
+15,02,05,Supe Puerto
+15,03,00,Cajatambo
+15,03,01,Cajatambo
+15,03,02,Copa
+15,03,03,Gorgor
+15,03,04,Huancapon
+15,03,05,Manas
+15,04,00,Canta
+15,04,01,Canta
+15,04,02,Arahuay
+15,04,03,Huamantanga
+15,04,04,Huaros
+15,04,05,Lachaqui
+15,04,06,San Buenaventura
+15,04,07,Santa Rosa de Quives
+15,05,00,Cañete
+15,05,01,San Vicente de Cañete
+15,05,02,Asia
+15,05,03,Calango
+15,05,04,Cerro Azul
+15,05,05,Chilca
+15,05,06,Coayllo
+15,05,07,Imperial
+15,05,08,Lunahuana
+15,05,09,Mala
+15,05,10,Nuevo Imperial
+15,05,11,Pacaran
+15,05,12,Quilmana
+15,05,13,San Antonio
+15,05,14,San Luis
+15,05,15,Santa Cruz de Flores
+15,05,16,Zuñiga
+15,06,00,Huaral
+15,06,01,Huaral
+15,06,02,Atavillos Alto
+15,06,03,Atavillos Bajo
+15,06,04,Aucallama
+15,06,05,Chancay
+15,06,06,Ihuari
+15,06,07,Lampian
+15,06,08,Pacaraos
+15,06,09,San Miguel de Acos
+15,06,10,Santa Cruz de Andamarca
+15,06,11,Sumbilca
+15,06,12,Veintisiete de Noviembre
+15,07,00,Huarochiri
+15,07,01,Matucana
+15,07,02,Antioquia
+15,07,03,Callahuanca
+15,07,04,Carampoma
+15,07,05,Chicla
+15,07,06,Cuenca
+15,07,07,Huachupampa
+15,07,08,Huanza
+15,07,09,Huarochiri
+15,07,10,Lahuaytambo
+15,07,11,Langa
+15,07,12,Laraos
+15,07,13,Mariatana
+15,07,14,Ricardo Palma
+15,07,15,San Andres de Tupicocha
+15,07,16,San Antonio
+15,07,17,San Bartolome
+15,07,18,San Damian
+15,07,19,San Juan de Iris
+15,07,20,San Juan de Tantaranche
+15,07,21,San Lorenzo de Quinti
+15,07,22,San Mateo
+15,07,23,San Mateo de Otao
+15,07,24,San Pedro de Casta
+15,07,25,San Pedro de Huancayre
+15,07,26,Sangallaya
+15,07,27,Santa Cruz de Cocachacra
+15,07,28,Santa Eulalia
+15,07,29,Santiago de Anchucaya
+15,07,30,Santiago de Tuna
+15,07,31,Santo Domingo de los Olleros
+15,07,32,Surco
+15,08,00,Huaura
+15,08,01,Huacho
+15,08,02,Ambar
+15,08,03,Caleta de Carquin
+15,08,04,Checras
+15,08,05,Hualmay
+15,08,06,Huaura
+15,08,07,Leoncio Prado
+15,08,08,Paccho
+15,08,09,Santa Leonor
+15,08,10,Santa Maria
+15,08,11,Sayan
+15,08,12,Vegueta
+15,09,00,Oyon
+15,09,01,Oyon
+15,09,02,Andajes
+15,09,03,Caujul
+15,09,04,Cochamarca
+15,09,05,Navan
+15,09,06,Pachangara
+15,10,00,Yauyos
+15,10,01,Yauyos
+15,10,02,Alis
+15,10,03,Ayauca
+15,10,04,Ayaviri
+15,10,05,Azangaro
+15,10,06,Cacra
+15,10,07,Carania
+15,10,08,Catahuasi
+15,10,09,Chocos
+15,10,10,Cochas
+15,10,11,Colonia
+15,10,12,Hongos
+15,10,13,Huampara
+15,10,14,Huancaya
+15,10,15,Huangascar
+15,10,16,Huantan
+15,10,17,Huañec
+15,10,18,Laraos
+15,10,19,Lincha
+15,10,20,Madean
+15,10,21,Miraflores
+15,10,22,Omas
+15,10,23,Putinza
+15,10,24,Quinches
+15,10,25,Quinocay
+15,10,26,San Joaquin
+15,10,27,San Pedro de Pilas
+15,10,28,Tanta
+15,10,29,Tauripampa
+15,10,30,Tomas
+15,10,31,Tupe
+15,10,32,Viñac
+15,10,33,Vitis
+16,00,00,Loreto
+16,01,00,Maynas
+16,01,01,Iquitos
+16,01,02,Alto Nanay
+16,01,03,Fernando Lores
+16,01,04,Indiana
+16,01,05,Las Amazonas
+16,01,06,Mazan
+16,01,07,Napo
+16,01,08,Punchana
+16,01,09,Putumayo
+16,01,10,Torres Causana
+16,01,12,Belén
+16,01,13,San Juan Bautista
+16,01,14,Teniente Manuel Clavero
+16,02,00,Alto Amazonas
+16,02,01,Yurimaguas
+16,02,02,Balsapuerto
+16,02,05,Jeberos
+16,02,06,Lagunas
+16,02,10,Santa Cruz
+16,02,11,Teniente Cesar Lopez Rojas
+16,03,00,Loreto
+16,03,01,Nauta
+16,03,02,Parinari
+16,03,03,Tigre
+16,03,04,Trompeteros
+16,03,05,Urarinas
+16,04,00,Mariscal Ramon Castilla
+16,04,01,Ramon Castilla
+16,04,02,Pebas
+16,04,03,Yavari
+16,04,04,San Pablo
+16,05,00,Requena
+16,05,01,Requena
+16,05,02,Alto Tapiche
+16,05,03,Capelo
+16,05,04,Emilio San Martin
+16,05,05,Maquia
+16,05,06,Puinahua
+16,05,07,Saquena
+16,05,08,Soplin
+16,05,09,Tapiche
+16,05,10,Jenaro Herrera
+16,05,11,Yaquerana
+16,06,00,Ucayali
+16,06,01,Contamana
+16,06,02,Inahuaya
+16,06,03,Padre Marquez
+16,06,04,Pampa Hermosa
+16,06,05,Sarayacu
+16,06,06,Vargas Guerra
+16,07,00,Datem del Marañón
+16,07,01,Barranca
+16,07,02,Cahuapanas
+16,07,03,Manseriche
+16,07,04,Morona
+16,07,05,Pastaza
+16,07,06,Andoas
+16,08,00,Putumayo
+16,08,01,Putumayo
+16,08,02,Rosa Panduro
+16,08,03,Teniente Manuel Clavero
+16,08,04,Yaguas
+17,00,00,Madre de Dios
+17,01,00,Tambopata
+17,01,01,Tambopata
+17,01,02,Inambari
+17,01,03,Las Piedras
+17,01,04,Laberinto
+17,02,00,Manu
+17,02,01,Manu
+17,02,02,Fitzcarrald
+17,02,03,Madre de Dios
+17,02,04,Huepetuhe
+17,03,00,Tahuamanu
+17,03,01,Iñapari
+17,03,02,Iberia
+17,03,03,Tahuamanu
+18,00,00,Moquegua
+18,01,00,Mariscal Nieto
+18,01,01,Moquegua
+18,01,02,Carumas
+18,01,03,Cuchumbaya
+18,01,04,Samegua
+18,01,05,San Cristobal
+18,01,06,Torata
+18,02,00,General Sanchez Cerro
+18,02,01,Omate
+18,02,02,Chojata
+18,02,03,Coalaque
+18,02,04,Ichuña
+18,02,05,La Capilla
+18,02,06,Lloque
+18,02,07,Matalaque
+18,02,08,Puquina
+18,02,09,Quinistaquillas
+18,02,10,Ubinas
+18,02,11,Yunga
+18,03,00,Ilo
+18,03,01,Ilo
+18,03,02,El Algarrobal
+18,03,03,Pacocha
+19,00,00,Pasco
+19,01,00,Pasco
+19,01,01,Chaupimarca
+19,01,02,Huachon
+19,01,03,Huariaca
+19,01,04,Huayllay
+19,01,05,Ninacaca
+19,01,06,Pallanchacra
+19,01,07,Paucartambo
+19,01,08,San Fco. de Asís de Yarusyacán
+19,01,09,Simon Bolivar
+19,01,10,Ticlacayan
+19,01,11,Tinyahuarco
+19,01,12,Vicco
+19,01,13,Yanacancha
+19,02,00,Daniel Alcides Carrion
+19,02,01,Yanahuanca
+19,02,02,Chacayan
+19,02,03,Goyllarisquizga
+19,02,04,Paucar
+19,02,05,San Pedro de Pillao
+19,02,06,Santa Ana de Tusi
+19,02,07,Tapuc
+19,02,08,Vilcabamba
+19,03,00,Oxapampa
+19,03,01,Oxapampa
+19,03,02,Chontabamba
+19,03,03,Huancabamba
+19,03,04,Palcazu
+19,03,05,Pozuzo
+19,03,06,Puerto Bermudez
+19,03,07,Villa Rica
+19,03,08,Constitucion
+20,00,00,Piura
+20,01,00,Piura
+20,01,01,Piura
+20,01,04,Castilla
+20,01,05,Catacaos
+20,01,07,Cura Mori
+20,01,08,El Tallan
+20,01,09,La Arena
+20,01,10,La Union
+20,01,11,Las Lomas
+20,01,14,Tambo Grande
+20,01,15,Veintiséis de Octubre
+20,02,00,Ayabaca
+20,02,01,Ayabaca
+20,02,02,Frias
+20,02,03,Jilili
+20,02,04,Lagunas
+20,02,05,Montero
+20,02,06,Pacaipampa
+20,02,07,Paimas
+20,02,08,Sapillica
+20,02,09,Sicchez
+20,02,10,Suyo
+20,03,00,Huancabamba
+20,03,01,Huancabamba
+20,03,02,Canchaque
+20,03,03,El Carmen de la Frontera
+20,03,04,Huarmaca
+20,03,05,Lalaquiz
+20,03,06,San Miguel de El Faique
+20,03,07,Sondor
+20,03,08,Sondorillo
+20,04,00,Morropon
+20,04,01,Chulucanas
+20,04,02,Buenos Aires
+20,04,03,Chalaco
+20,04,04,La Matanza
+20,04,05,Morropon
+20,04,06,Salitral
+20,04,07,San Juan de Bigote
+20,04,08,Santa Catalina de Mossa
+20,04,09,Santo Domingo
+20,04,10,Yamango
+20,05,00,Paita
+20,05,01,Paita
+20,05,02,Amotape
+20,05,03,Arenal
+20,05,04,Colan
+20,05,05,La Huaca
+20,05,06,Tamarindo
+20,05,07,Vichayal
+20,06,00,Sullana
+20,06,01,Sullana
+20,06,02,Bellavista
+20,06,03,Ignacio Escudero
+20,06,04,Lancones
+20,06,05,Marcavelica
+20,06,06,Miguel Checa
+20,06,07,Querecotillo
+20,06,08,Salitral
+20,07,00,Talara
+20,07,01,Pariñas
+20,07,02,El Alto
+20,07,03,La Brea
+20,07,04,Lobitos
+20,07,05,Los Organos
+20,07,06,Mancora
+20,08,00,Sechura
+20,08,01,Sechura
+20,08,02,Bellavista de la Union
+20,08,03,Bernal
+20,08,04,Cristo Nos Valga
+20,08,05,Vice
+20,08,06,Rinconada Llicuar
+21,00,00,Puno
+21,01,00,Puno
+21,01,01,Puno
+21,01,02,Acora
+21,01,03,Amantani
+21,01,04,Atuncolla
+21,01,05,Capachica
+21,01,06,Chucuito
+21,01,07,Coata
+21,01,08,Huata
+21,01,09,Mañazo
+21,01,10,Paucarcolla
+21,01,11,Pichacani
+21,01,12,Plateria
+21,01,13,San Antonio
+21,01,14,Tiquillaca
+21,01,15,Vilque
+21,02,00,Azangaro
+21,02,01,Azangaro
+21,02,02,Achaya
+21,02,03,Arapa
+21,02,04,Asillo
+21,02,05,Caminaca
+21,02,06,Chupa
+21,02,07,Jose Domingo Choquehuanca
+21,02,08,Muñani
+21,02,09,Potoni
+21,02,10,Saman
+21,02,11,San Anton
+21,02,12,San Jose
+21,02,13,San Juan de Salinas
+21,02,14,Santiago de Pupuja
+21,02,15,Tirapata
+21,03,00,Carabaya
+21,03,01,Macusani
+21,03,02,Ajoyani
+21,03,03,Ayapata
+21,03,04,Coasa
+21,03,05,Corani
+21,03,06,Crucero
+21,03,07,Ituata
+21,03,08,Ollachea
+21,03,09,San Gaban
+21,03,10,Usicayos
+21,04,00,Chucuito
+21,04,01,Juli
+21,04,02,Desaguadero
+21,04,03,Huacullani
+21,04,04,Kelluyo
+21,04,05,Pisacoma
+21,04,06,Pomata
+21,04,07,Zepita
+21,05,00,El Collao
+21,05,01,Ilave
+21,05,02,Capaso
+21,05,03,Pilcuyo
+21,05,04,Santa Rosa
+21,05,05,Conduriri
+21,06,00,Huancane
+21,06,01,Huancane
+21,06,02,Cojata
+21,06,03,Huatasani
+21,06,04,Inchupalla
+21,06,05,Pusi
+21,06,06,Rosaspata
+21,06,07,Taraco
+21,06,08,Vilque Chico
+21,07,00,Lampa
+21,07,01,Lampa
+21,07,02,Cabanilla
+21,07,03,Calapuja
+21,07,04,Nicasio
+21,07,05,Ocuviri
+21,07,06,Palca
+21,07,07,Paratia
+21,07,08,Pucara
+21,07,09,Santa Lucia
+21,07,10,Vilavila
+21,08,00,Melgar
+21,08,01,Ayaviri
+21,08,02,Antauta
+21,08,03,Cupi
+21,08,04,Llalli
+21,08,05,Macari
+21,08,06,Nuñoa
+21,08,07,Orurillo
+21,08,08,Santa Rosa
+21,08,09,Umachiri
+21,09,00,Moho
+21,09,01,Moho
+21,09,02,Conima
+21,09,03,Huayrapata
+21,09,04,Tilali
+21,10,00,San Antonio de Putina
+21,10,01,Putina
+21,10,02,Ananea
+21,10,03,Pedro Vilca Apaza
+21,10,04,Quilcapuncu
+21,10,05,Sina
+21,11,00,San Roman
+21,11,01,Juliaca
+21,11,02,Cabana
+21,11,03,Cabanillas
+21,11,04,Caracoto
+21,12,00,Sandia
+21,12,01,Sandia
+21,12,02,Cuyocuyo
+21,12,03,Limbani
+21,12,04,Patambuco
+21,12,05,Phara
+21,12,06,Quiaca
+21,12,07,San Juan del Oro
+21,12,08,Yanahuaya
+21,12,09,Alto Inambari
+21,12,10,San Pedro de Putina Punco
+21,13,00,Yunguyo
+21,13,01,Yunguyo
+21,13,02,Anapia
+21,13,03,Copani
+21,13,04,Cuturapi
+21,13,05,Ollaraya
+21,13,06,Tinicachi
+21,13,07,Unicachi
+22,00,00,San Martin
+22,01,00,Moyobamba
+22,01,01,Moyobamba
+22,01,02,Calzada
+22,01,03,Habana
+22,01,04,Jepelacio
+22,01,05,Soritor
+22,01,06,Yantalo
+22,02,00,Bellavista
+22,02,01,Bellavista
+22,02,02,Alto Biavo
+22,02,03,Bajo Biavo
+22,02,04,Huallaga
+22,02,05,San Pablo
+22,02,06,San Rafael
+22,03,00,El Dorado
+22,03,01,San Jose de Sisa
+22,03,02,Agua Blanca
+22,03,03,San Martin
+22,03,04,Santa Rosa
+22,03,05,Shatoja
+22,04,00,Huallaga
+22,04,01,Saposoa
+22,04,02,Alto Saposoa
+22,04,03,El Eslabon
+22,04,04,Piscoyacu
+22,04,05,Sacanche
+22,04,06,Tingo de Saposoa
+22,05,00,Lamas
+22,05,01,Lamas
+22,05,02,Alonso de Alvarado
+22,05,03,Barranquita
+22,05,04,Caynarachi
+22,05,05,Cuñumbuqui
+22,05,06,Pinto Recodo
+22,05,07,Rumisapa
+22,05,08,San Roque de Cumbaza
+22,05,09,Shanao
+22,05,10,Tabalosos
+22,05,11,Zapatero
+22,06,00,Mariscal Caceres
+22,06,01,Juanjui
+22,06,02,Campanilla
+22,06,03,Huicungo
+22,06,04,Pachiza
+22,06,05,Pajarillo
+22,07,00,Picota
+22,07,01,Picota
+22,07,02,Buenos Aires
+22,07,03,Caspisapa
+22,07,04,Pilluana
+22,07,05,Pucacaca
+22,07,06,San Cristobal
+22,07,07,San Hilarion
+22,07,08,Shamboyacu
+22,07,09,Tingo de Ponasa
+22,07,10,Tres Unidos
+22,08,00,Rioja
+22,08,01,Rioja
+22,08,02,Awajun
+22,08,03,Elias Soplin Vargas
+22,08,04,Nueva Cajamarca
+22,08,05,Pardo Miguel
+22,08,06,Posic
+22,08,07,San Fernando
+22,08,08,Yorongos
+22,08,09,Yuracyacu
+22,09,00,San Martin
+22,09,01,Tarapoto
+22,09,02,Alberto Leveau
+22,09,03,Cacatachi
+22,09,04,Chazuta
+22,09,05,Chipurana
+22,09,06,El Porvenir
+22,09,07,Huimbayoc
+22,09,08,Juan Guerra
+22,09,09,La Banda de Shilcayo
+22,09,10,Morales
+22,09,11,Papaplaya
+22,09,12,San Antonio
+22,09,13,Sauce
+22,09,14,Shapaja
+22,10,00,Tocache
+22,10,01,Tocache
+22,10,02,Nuevo Progreso
+22,10,03,Polvora
+22,10,04,Shunte
+22,10,05,Uchiza
+23,00,00,Tacna
+23,01,00,Tacna
+23,01,01,Tacna
+23,01,02,Alto de la Alianza
+23,01,03,Calana
+23,01,04,Ciudad Nueva
+23,01,05,Inclan
+23,01,06,Pachia
+23,01,07,Palca
+23,01,08,Pocollay
+23,01,09,Sama
+23,01,10,Coronel Gregorio Albarracín L
+23,02,00,Candarave
+23,02,01,Candarave
+23,02,02,Cairani
+23,02,03,Camilaca
+23,02,04,Curibaya
+23,02,05,Huanuara
+23,02,06,Quilahuani
+23,03,00,Jorge Basadre
+23,03,01,Locumba
+23,03,02,Ilabaya
+23,03,03,Ite
+23,04,00,Tarata
+23,04,01,Tarata
+23,04,02,Chucatamani
+23,04,03,Estique
+23,04,04,Estique-Pampa
+23,04,05,Sitajara
+23,04,06,Susapaya
+23,04,07,Tarucachi
+23,04,08,Ticaco
+24,00,00,Tumbes
+24,01,00,Tumbes
+24,01,01,Tumbes
+24,01,02,Corrales
+24,01,03,La Cruz
+24,01,04,Pampas de Hospital
+24,01,05,San Jacinto
+24,01,06,San Juan de la Virgen
+24,02,00,Contralmirante Villar
+24,02,01,Zorritos
+24,02,02,Casitas
+24,02,03,Canoas de Punta Sal
+24,03,00,Zarumilla
+24,03,01,Zarumilla
+24,03,02,Aguas Verdes
+24,03,03,Matapalo
+24,03,04,Papayal
+25,00,00,Ucayali
+25,01,00,Coronel Portillo
+25,01,01,Callaria
+25,01,02,Campoverde
+25,01,03,Iparia
+25,01,04,Masisea
+25,01,05,Yarinacocha
+25,01,06,Nueva Requena
+25,01,07,Manantay
+25,02,00,Atalaya
+25,02,01,Raymondi
+25,02,02,Sepahua
+25,02,03,Tahuania
+25,02,04,Yurua
+25,03,00,Padre Abad
+25,03,01,Padre Abad
+25,03,02,Irazola
+25,03,03,Curimana
+25,04,00,Purus
+25,04,01,Purus
+99,00,00,Extranjero
+99,99,00,Extranjero
+99,99,99,Extranjero

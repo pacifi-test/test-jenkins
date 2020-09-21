@@ -1,0 +1,46 @@
+{% extends "base/base_back.html" %}
+
+{% load i18n crispy_forms_tags %}
+{% load l10n %}
+
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">Inicio</a>
+    &rsaquo;
+    <a href="{% url 'producto:producto_list' %}">{{ opts.verbose_name_plural|capfirst }}</a>
+    &rsaquo; {{ title }}
+{% endblock breadcrumbs %}
+
+{% block content_title %}
+    {{ opts.verbose_name|capfirst }}|
+    <small>{{ title }}</small>
+{% endblock content_title %}
+
+{% block content %}
+
+    {% crispy form %}
+
+{% endblock %}
+
+
+{% block customjs %}
+    <script>
+        $(document).ready(function () {
+            $("#id_codigo").attr('readonly', true);
+        });
+        $("#id_producto_general").change(function () {
+            var cg = $(this).find("option:selected").text();
+            var color = $("#id_color").val();
+            $("#id_codigo").val(cg + "-" + color);
+        });
+        $("#id_color").keyup(function () {
+            var cg = $("#id_producto_general").find("option:selected").text();
+            var color = $("#id_color").val();
+            $("#id_codigo").val(cg + "-" + color);
+        });
+        $('form').submit(function () {
+            $(this).find("button[type='submit']").prop('disabled', true);
+        });
+
+    </script>
+{% endblock customjs %}
+

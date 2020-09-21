@@ -1,0 +1,84 @@
+{% extends "base/base_back.html" %}
+
+{% load i18n crispy_forms_tags %}
+{% load l10n %}
+{% load static %}
+
+
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">Inicio</a>
+
+    &rsaquo; {{ title }}
+{% endblock breadcrumbs %}
+
+{% block content_title %}
+    {{ opts.verbose_name|capfirst }}|
+    <small>{{ title }}</small>
+{% endblock content_title %}
+
+{% block content %}
+
+    {% crispy form %}
+
+    <div class="hidden">
+        <input type="hidden" id="periodo_nombre_id" value="{{ periodo.nombre }}">
+        <input type="hidden" id="periodo_igv_id" value="{{ periodo.igv }}">
+    </div>
+
+{% endblock %}
+
+
+{% block customjs %}
+
+    <script>
+        $(window).on("load", function () {
+            $("span.select2-selection").removeClass("select2-selection--single");
+        });
+    </script>
+    <script>
+
+        $("#search_empresa").click(function () {
+            nro_doc = $("#nro_doc_id").val();
+            $.ajax({
+                url: "{% url 'compra:proveedor_view' %}",
+                data: {"nro_doc": nro_doc},
+                type: "GET",
+
+            })
+                .done(function (data) {
+                    $("#proveedor_id").show();
+                    $("#proveedor_content_id").html(data);
+                });
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('#id_fecha_emision').datetimepicker({
+
+                format: 'DD/MM/YYYY'
+            });
+        });
+        $(function () {
+            $('#id_fecha_vencimiento').datetimepicker({
+
+                format: 'DD/MM/YYYY'
+            });
+        });
+    </script>
+
+    <script>
+        //  Suma
+        $("#id_total").keyup(function () {
+            igv_online = parseFloat($("#periodo_igv_id").val());
+            total = parseFloat($(this).val());
+
+            base_imponible = total / (1 + igv_online / 100);
+            igv = base_imponible * igv_online / 100;
+
+            $("#id_base_imponible").val(base_imponible.toFixed(2));
+            $("#id_igv").val(igv.toFixed(2));
+        });
+    </script>
+
+{% endblock %}

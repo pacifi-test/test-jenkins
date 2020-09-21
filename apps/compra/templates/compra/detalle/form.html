@@ -1,0 +1,45 @@
+{% load crispy_forms_tags %}
+
+{% crispy form %}
+
+<div class="hidden">
+    <input type="hidden" id="periodo_nombre_id" value="{{ periodo.nombre }}">
+    <input type="hidden" id="periodo_igv_id" value="{{ periodo.igv }}">
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("span.select2-selection").removeClass("select2-selection--single");
+    });
+</script>
+
+<script>
+    $("#id_valor_unitario").keyup(function () {
+        igv_online = parseFloat($("#periodo_igv_id").val());
+
+        valor_initario = parseFloat($(this).val());
+        cantidad = parseFloat($("#id_cantidad").val());
+        precio_unitario = valor_initario * (1 + (igv_online / 100));
+        igv = (precio_unitario - valor_initario) * cantidad;
+        total = valor_initario * cantidad;
+
+
+        $("#id_precio_unitario").val(precio_unitario.toFixed(2));
+        $("#id_igv_total").val(igv.toFixed(2));
+        $("#id_precio_total").val(total.toFixed(2));
+    });
+    $("#id_cantidad").keyup(function () {
+        igv_online = parseFloat($("#periodo_igv_id").val());
+
+        valor_initario = parseFloat($("#id_valor_unitario").val());
+        cantidad = parseFloat($(this).val());
+        precio_unitario = valor_initario * (1 + (igv_online / 100));
+        igv = (precio_unitario - valor_initario) * cantidad;
+        total = valor_initario * cantidad;
+        $("#id_precio_unitario").val(precio_unitario.toFixed(2));
+        $("#id_igv_total").val(igv.toFixed(2));
+        $("#id_precio_total").val(total.toFixed(2));
+    });
+
+
+</script>

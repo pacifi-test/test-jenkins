@@ -1,0 +1,117 @@
+{% extends "base/base_back.html" %}
+
+
+{% load i18n app_security %}
+{% load l10n humanize %}
+
+
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">Inicio</a>
+    &rsaquo;<a href="{% url 'vendedor:pedido_list' %}">Lista de Pedidos</a>
+    &rsaquo; {{ title }}
+{% endblock breadcrumbs %}
+
+
+{% block content_title %}
+    {{ opts.verbose_name_plural|capfirst }}|
+    <small>{{ title }}</small>
+
+    <div class="btn-group">
+
+        {% if not object.estado %}
+            <a href="{% url 'vendedor:salidaaceptar_update' object.pk %}"
+               class="btn btn-primary btn-sm js-confirm text-bold"
+               msg-title="{% trans 'Aceptar Salida' %} {% trans 'Salida' %}?."
+               msg="{% trans 'Esta Seguro?' %}<br/>{% trans 'Recuerde que esta acción no puede ser revertida' %}"
+               title="{% trans 'Aceptar' %} {% trans 'Salida' %}" rel="tooltip"><i
+                    class="btn-icon-only fa fa-check-circle"></i></a>
+        {% else %}
+            Aceptado
+        {% endif %}
+
+    </div>
+{% endblock content_title %}
+
+
+{% block content %}
+    <h3 class="text-center visible-print">Julitec</h3>
+    <h4 class="text-center visible-print">Ficha de Salida</h4>
+    <table class="table">
+        <tr>
+            <td align="center">
+                <p class="text text-info">Código de Pedido: <strong>{{ object.codigo }}</strong></p>
+                <p class="text text-info">Fecha de Pedido: <strong>{{ object.created_at|date:'d-m-Y h:i' }}</strong></p>
+            </td>
+            <td align="center">
+                <p class="text text-info">Cliente:
+                    <strong>{{ object.cliente.nombres }} {% if object.cliente.apellidos %}
+                        {{ object.cliente.apellidos }}
+                    {% endif %} </strong></p>
+                <p class="text text-info">Documento:
+                    <strong>{{ object.cliente.tipo_documento.descripcion }} {{ object.cliente.nro_documento }}</strong>
+                </p>
+            </td>
+        </tr>
+    </table>
+
+
+
+    <div class="container-overflow">
+        <table id="equipos_id" class="table table-bordered table-hover table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Color</th>
+                <th>Precio Unitario</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for d in object.pedidodetalle_set.all %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ d.producto.marca.nombre }}</td>
+                    <td>{{ d.producto.codigo }}</td>
+                    <td>{{ d.producto.color }}</td>
+                    <td>{{ d.precio_unitario }}</td>
+                    <td>{{ d.cantidad }}</td>
+                    <td>{{ d.total }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td align="right" colspan="6">Total</td>
+                <th>{{ object.total }}</th>
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+    <div class="text-center">
+
+        <a class="printPage btn btn-primary hidden-print " href="#"><i class="fa fa-print"></i> Imprimir</a>
+        <a href="{% url 'vendedor:pedido_update' object.pk %}"
+           class="btn btn-warning js-confirm text-bold"
+           msg-title="Desactivar Pedido?."
+           msg="Esta Seguro<br/>Recuerde que esta acción no se puede retroceder"
+           title="Desactivar Pedido" rel="tooltip">
+            <i class="btn-icon-only fa fa-flag-checkered">
+            </i>
+            Desactivar Pedido
+        </a>
+    </div>
+{% endblock content %}
+
+{% block customjs %}
+    <script>
+        $('a.printPage').click(function () {
+            $("#equipos_id").removeClass();
+            $("#equipos_id").addClass("table");
+            window.print();
+            return false;
+        });
+    </script>
+{% endblock %}

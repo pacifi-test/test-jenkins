@@ -1,0 +1,173 @@
+{% extends "base/base_back.html" %}
+
+{% load i18n app_security %}
+{% load l10n humanize %}
+
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">Inicio</a>
+    &rsaquo; {{ title }}
+{% endblock breadcrumbs %}
+
+{% block content_title %}
+    {{ opts.verbose_name_plural|capfirst }}|
+    <small>{{ title }}</small>
+{% endblock content_title %}
+
+{% block content %}
+    <script type="text/javascript">
+        $(function () {
+            $('table').kgrid({
+                form_data: ['{{f}}', '{{q}}'],
+                form_to: '{% url "producto:producto_list" %}?f={{f}}&q={{q}}',
+                order_attr: 'class=""',
+                order_to: '{% url "producto:producto_list" %}?f={{f}}&q={{q}}',
+            });
+        });
+    </script>
+
+    <div class="btn-toolbar btn-toolbar-top">
+        <div class="row">
+            <div class="btn-actions">
+                <a href="{% url 'producto:producto_add' %}" class="btn btn-primary text-bold"
+                   title="Agregar Marca"><i class="fa fa-plus"></i> <span
+                        class="hidden-xs">Agregar</span></a>
+            </div>
+        </div>
+    </div>
+    <div class="container-overflow">
+        <table class="table table-bordered table-hover table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th class="col-hidden" data-search="codigo_general"
+                    data-order="codigo_general">Código General
+                </th>
+                <th class="col-hidden" data-search="codigo"
+                    data-order="codigo">Código
+                </th>
+                <th class="col-hidden" data-search="descripcion" data-order="descripcion">Descripción</th>
+                <th class="col-hidden" data-search="marca"
+                    data-order="marca">Marca
+                </th>
+                <th class="col-hidden" data-search="color"
+                    data-order="color">Color
+                </th>
+                <th>
+                    Precios
+                </th>
+
+                <th class="col-hidden">Imagen</th>
+                <th class="btn-actions col-blocked text-center">Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for d in object_list %}
+                <tr>
+                    <td>{% if is_paginated %}
+                        {{ page_obj.start_index|add:forloop.counter0 }}
+                    {% else %}
+                        {{ forloop.counter }}
+                    {% endif %}
+                    </td>
+
+                    <td>{{ d.codigo_general }}</td>
+                    <td>{{ d.codigo }}</td>
+                    <td>{{ d.descripcion }}</td>
+                    <td>{{ d.marca }}</td>
+                    <td class="text-center">
+                        {{ d.color }}
+                    </td>
+                    <td>
+                        {% for precio in d.producto_general.precioventa_set.all %}
+                            {{ precio.ruta }} - {{ precio.precio }} |
+                        {% endfor %}
+
+                    </td>
+                    <td>
+
+                        {% if d.imagen %}
+                            <button type="button" data-toggle="modal" data-target="#exampleModal"
+                                    data-codigo="{{ d.codigo }}" data-color="{{ d.color }}"
+                                    data-img="{{ d.imagen.url }}"
+                                    data-description="{{ d.descripcion }}">
+                                <img src="{{ d.imagen.url }}" width="30">
+                            </button>
+                        {% endif %}
+
+
+                    </td>
+
+                    <td class="text-center">
+                        <div class="btn-group">
+                            <a href="{% url 'producto:producto_update' d.pk %}"
+                               class="btn btn-info btn-sm text-bold"
+                               title="Cambiar Producto" rel="tooltip"><i
+                                    class="btn-icon-only fa fa-edit"></i>
+                            </a>
+
+                            <a href="{% url 'producto:producto_delete' d.pk %}"
+                               class="btn btn-danger btn-sm js-confirm text-bold"
+                               msg-title="Eliminar Producto?."
+                               msg="Esta Seguro<br/>Recuerde que esta acción no se puede retroceder"
+                               title="Eliminar Producto" rel="tooltip"><i
+                                    class="btn-icon-only fa fa-trash-o"></i>
+                            </a>
+
+                        </div>
+
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+    <div class="row">
+        {% if is_paginated %}
+            {% load paginator %}
+            {% paginator %}
+        {% else %}
+            <div class="col-md-12">
+                <ul class="breadcrumbpag">
+                    {{ object_list.count }}
+                    {% ifequal object_list.count 1 %}{{ opts.verbose_name|capfirst }}{% else %}
+                        {{ opts.verbose_name_plural|capfirst }}{% endifequal %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <img class="img-responsive" src="" id="img_modal_id" alt="">
+                    <h3>Descripción</h3>
+                    <p id="text_modal_id" class="text text-info"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+{% block customjs %}
+    <script>
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var codigo = button.data('codigo');
+            var img = button.data('img');
+            var descripcion = button.data('description');
+
+            var modal = $(this);
+            modal.find('.modal-title').text('Producto: ' + codigo);
+            $('#img_modal_id').attr('src', img);
+            $("#text_modal_id").html(descripcion);
+
+        })
+    </script>
+{% endblock customjs %}

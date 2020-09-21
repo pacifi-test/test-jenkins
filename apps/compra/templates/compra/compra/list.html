@@ -1,0 +1,97 @@
+{% extends "base/base_back.html" %}
+
+
+{% load i18n app_security %}
+{% load l10n humanize %}
+
+
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">{% trans 'Home' %}</a>
+    &rsaquo; {{ title }}
+{% endblock breadcrumbs %}
+
+
+{% block content_title %}
+    {{ opts.verbose_name_plural|capfirst }}|
+    <small>{{ title }}</small>
+{% endblock content_title %}
+
+
+{% block content %}
+    <script type="text/javascript">
+        $(function () {
+            $('table').kgrid({
+                form_data: ['{{f}}', '{{q}}'],
+                form_to: '{% url "backend:menu_list" %}?f={{f}}&q={{q}}',
+                order_attr: 'class=""',
+                order_to: '{% url "backend:menu_list" %}?f={{f}}&q={{q}}',
+            });
+        });
+    </script>
+
+    <div class="container-overflow">
+        <table class="table table-bordered table-hover table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+
+
+                <th class="col-hidden" data-search="nro_correlativo"
+                    data-order="nro_correlativo">Nro.
+                </th>
+                <th class="col-hidden">Registro</th>
+                <th class="col-hidden" data-search="proveedor"
+                    data-order="proveedor">Proveedor
+                </th>
+                <th class="col-hidden" data-search="nro_comprobante"
+                    data-order="nro_comprobante">Comprobante
+                </th>
+
+                <th class="col-hidden">Base Imponible</th>
+                <th class="col-hidden">IGV</th>
+                <th class="col-hidden">Total</th>
+                <th class="btn-actions col-blocked text-center">Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for d in object_list %}
+                <tr class="{{ d.procesado|yesno:',danger' }}">
+
+                    <td>{{ d.nro_correlativo }}</td>
+                    <td>{{ d.created_at }}</td>
+                    <td>{{ d.proveedor.razon_social }}</td>
+                    <td>{{ d.nro_comprobante }} </td>
+
+                    <td>{{ d.base_imponible }}</td>
+                    <td>{{ d.igv }}</td>
+                    <td>{{ d.total }}</td>
+
+
+                    <td class="text-center">
+                        <div class="btn-group">
+                            <a href="{% url 'compra:compra_detail' d.pk %}"
+                               class="btn btn-info btn-sm text-bold"
+                               title="Detalle Compra" rel="tooltip"><i
+                                    class="btn-icon-only fa fa-eye"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        {% if is_paginated %}
+            {% load paginator %}
+            {% paginator %}
+        {% else %}
+            <div class="col-md-12">
+                <ul class="breadcrumbpag">
+                    {{ object_list.count }}
+                    {% ifequal object_list.count 1 %}{{ opts.verbose_name|capfirst }}{% else %}
+                        {{ opts.verbose_name_plural|capfirst }}{% endifequal %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock content %}

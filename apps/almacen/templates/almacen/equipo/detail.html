@@ -1,0 +1,79 @@
+{% extends "base/base_back.html" %}
+
+{% load i18n app_security %}
+{% load l10n humanize %}
+
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">Inicio</a>
+    &rsaquo; {{ title }}
+{% endblock breadcrumbs %}
+
+{% block content_title %}
+    {{ opts.verbose_name_plural|capfirst }}|
+    <small>{{ title }}</small>
+{% endblock content_title %}
+
+{% block content %}
+
+    <div>
+
+        {% if equipo.producto.imagen %}
+            <img src="{{ equipo.producto.imagen }}" alt="">
+        {% endif %}
+
+        <table class="table">
+            <caption>Producto</caption>
+            <tr>
+                <th>Producto:</th>
+                <td>{{ equipo.producto.codigo }}</td>
+                <th>Color:</th>
+                <td>{{ equipo.producto.color }}</td>
+                <th>Marca:</th>
+                <td>{{ equipo.producto.marca }}</td>
+            </tr>
+
+
+        </table>
+
+        <table class="table">
+            <caption>Equipo</caption>
+            <tr>
+                <th>Imei:</th>
+                <td>{{ equipo.imei }}</td>
+                <th>Contable:</th>
+                <td>
+                    {% if equipo.contable %}
+                        <p class="text-info">
+                            Contable
+                        </p>
+                    {% else %}
+                        <p class="text-warning">No contable</p>
+                    {% endif %}
+                </td>
+                <th>
+                    Fecha de ingreso
+                </th>
+                <td>
+                    {{ equipo.created_at|date:'d/m/Y H:i' }}
+                </td>
+                <th>Registrado por</th>
+                <td>{{ equipo.user }}</td>
+            </tr>
+
+        </table>
+        <div class="text-center">
+            <div class="">
+                <a href="{% url 'almacen:equipo_update' equipo.id %}" title="Actuilizar Equipo" class="btn btn-info"><i class="fa fa-edit"></i>Actualizar</a>
+
+                <a href="{% url 'almacen:equipo_delete' equipo.pk %}"
+                   class="btn btn-danger  js-confirm text-bold"
+                   msg-title="Eliminar Equipo?."
+                   msg="Esta Seguro<br/>Recuerde que esta acción no se puede retroceder"
+                   title="Eliminar Equipo" rel="tooltip"><i
+                        class="btn-icon-only fa fa-trash-o"></i> Eliminar</a>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

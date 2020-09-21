@@ -1,0 +1,176 @@
+{% extends "base/base_back.html" %}
+{% load static %}
+
+
+
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">Inicio</a>
+    &rsaquo; {{ title }}
+{% endblock breadcrumbs %}
+
+
+{% block content_title %}
+    {{ opts.verbose_name_plural|capfirst }}|
+    <small>{{ title }}</small>
+{% endblock content_title %}
+
+
+{% block content %}
+
+    <div ng-app="myApp">
+        <div ng-controller="pedidoCtrl as ctrl">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div ng-show="!ctrl.ruta">
+                            <fieldset class="scheduler-border">
+                                <legend class="scheduler-border">Ruta</legend>
+                                <select name="" id="" ng-model="ctrl.ruta" class="form-control">
+                                    <option value="">----</option>
+                                    <option value="LOCAL">LOCAL</option>
+                                    <option value="REGIONAL">REGIONAL</option>
+                                    <option value="NACIONAL">NACIONAL</option>
+                                </select>
+                            </fieldset>
+
+                        </div>
+
+                        <div ng-show="ctrl.ruta">
+                            <fieldset class="scheduler-border">
+                                <legend class="scheduler-border">Ruta</legend>
+                                <p class="text-info">Ruta Seleccionada <strong> {[{ ctrl.ruta }]}</strong></p>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="col-md-9" ng-show="ctrl.ruta">
+                        <fieldset class="scheduler-border form-inline col-md-4" >
+                            <legend class="scheduler-border">Cliente</legend>
+                            <input type="text" ng-model="ctrl.cliente_search"
+                                   uib-typeahead="state.campo_search for state in ctrl.clientes | filter:$viewValue | limitTo:8"
+                                   typeahead-on-select="ctrl.selectCliente($item)"
+                                   class="form-control" placeholder="Código de producto">
+                        </fieldset>
+                        <div class="col-md-8">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Tipo Documento</th>
+                                    <th>Nro Documento</th>
+                                    <th>Nro Dirección</th>
+                                    <th>Nro Ciudad</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>{[{ ctrl.cliente.nombre }]}</td>
+                                    <td>{[{ ctrl.cliente.apellidos }]}</td>
+                                    <td>{[{ ctrl.cliente.tipo_documento }]}</td>
+                                    <td>{[{ ctrl.cliente.nro_documento }]}</td>
+                                    <td>{[{ ctrl.cliente.direccion }]}</td>
+                                    <td>{[{ ctrl.cliente.lugar }]}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="ctrl.ruta" class="container">
+                <div class="row">
+                    <fieldset class="scheduler-border form-inline col-md-6">
+                        <legend class="scheduler-border">Producto</legend>
+                        <input type="text" ng-model="ctrl.producto_codigo"
+                               uib-typeahead="state.codigo for state in ctrl.productos | filter:$viewValue | limitTo:8"
+                               typeahead-on-select="ctrl.buscarProducto($item)"
+                               class="form-control" placeholder="Código de producto">
+                        <input type="number" ng-model="ctrl.cantidad" class="form-control" placeholder="Cantidad">
+                        <button ng-click="ctrl.addProducto()" ng-enter="ctrl.addProducto()"
+                                class="form-control btn btn-primary">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </fieldset>
+                    <div class="col-md-6">
+                        <div>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Color</th>
+                                    <th>Marca</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad en Almacen</th>
+                                    <th>Reserva</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>{[{ ctrl.producto.codigo }]}</td>
+                                    <td>{[{ ctrl.producto.color }]}</td>
+                                    <td>{[{ ctrl.producto.marca }]}</td>
+                                    <td>{[{ ctrl.producto.precio }]}</td>
+                                    <td>{[{ ctrl.producto.cantidad }]}</td>
+                                    <td>{[{ ctrl.producto.reserva }]}</td>
+
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Producto</td>
+
+                    <td>Precio Unitario</td>
+                    <td>Cantidad</td>
+                    <td>Precio</td>
+                    <td>Acción</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="ps in ctrl.productos_seleccionados">
+
+                    <td>{[{ $index +1 }]}</td>
+                    <td>{[{ ps.producto.codigo }]}</td>
+                    <td>{[{ ps.producto.precio }]}</td>
+                    <td>{[{ ps.cantidad }]}</td>
+                    <td>{[{ ps.precio_total }]}</td>
+                    <td>
+                        <button class="btn btn-danger" ng-click="ctrl.removeProducto(ps)">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">Total</td>
+                    <th>{[{ ctrl.total }]}</th>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="text-center">
+                <button class="btn btn-success" ng-click="ctrl.realizarPedido()"><i class="fa fa-save"></i> Realizar
+                    Pedido
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock content %}
+
+{% block customjs %}
+    <script src="{% static 'vendedor/servicio.js' %}"></script>
+    <script src="{% static 'vendedor/pedido/pedidoctrl.js' %}"></script>
+
+
+
+{% endblock %}

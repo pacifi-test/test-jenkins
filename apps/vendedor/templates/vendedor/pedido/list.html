@@ -1,0 +1,113 @@
+{% extends "base/base_back.html" %}
+
+{% load i18n app_security %}
+{% load l10n humanize %}
+
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">Inicio</a>
+    &rsaquo; {{ title }}
+{% endblock breadcrumbs %}
+
+{% block content_title %}
+    {{ opts.verbose_name_plural|capfirst }}|
+    <small>{{ title }}</small>
+{% endblock content_title %}
+
+{% block content %}
+    <script type="text/javascript">
+        $(function () {
+            $('table').kgrid({
+                form_data: ['{{f}}', '{{q}}'],
+                form_to: '{% url "producto:marca_list" %}?f={{f}}&q={{q}}',
+                order_attr: 'class=""',
+                order_to: '{% url "producto:marca_list" %}?f={{f}}&q={{q}}',
+            });
+        });
+    </script>
+
+    <div class="btn-toolbar btn-toolbar-top">
+        <div class="row">
+            <div class="btn-actions">
+                <a href="{% url 'producto:marca_add' %}" class="btn btn-primary text-bold"
+                   title="Agregar Marca"><i class="fa fa-plus"></i> <span
+                        class="hidden-xs">Agregar</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container-overflow">
+        <table class="table table-bordered table-hover table-striped table-condensed table-responsive">
+            <thead>
+            <tr>
+                <th>#</th>
+
+
+                <th class="col-hidden" data-search="codigo">
+                    Código
+                </th>
+                <th class="col-hidden" data-search="ruta">
+                    Ruta
+                </th>
+                <th>Fecha</th>
+                <th>Cliente</th>
+                <th>Total</th>
+
+                <th class="btn-actions col-blocked text-center">Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for d in object_list %}
+                <tr>
+                    <td>{% if is_paginated %}
+                        {{ page_obj.start_index|add:forloop.counter0 }}
+                    {% else %}
+                        {{ forloop.counter }}
+                    {% endif %}
+                    </td>
+
+                    <td>{{ d.codigo }}</td>
+                    <td>{{ d.ruta }}</td>
+                    <td>{{ d.created_at|date:'d-m-Y h:i' }}</td>
+                    <td>{{ d.cliente }}</td>
+                    <td>{{ d.total }}</td>
+                    <td class="text-center">
+                        <div class="btn-group">
+                            <a href="{% url 'vendedor:pedido_detail' d.pk %}"
+                               class="btn btn-info btn-sm text-bold"
+                               title="Ver Detalle" rel="tooltip">
+                                <i class="btn-icon-only fa fa-eye"></i>
+                            </a>
+                            {% if d.estado %}
+                                <a href="{% url 'vendedor:pedido_update' d.pk %}"
+                                   class="btn btn-warning btn-sm js-confirm text-bold"
+                                   msg-title="Desactivar Pedido?."
+                                   msg="Esta Seguro<br/>Recuerde que esta acción no se puede retroceder"
+                                   title="Desactivar Pedido" rel="tooltip"><i
+                                        class="btn-icon-only fa fa-flag-checkered"></i>
+                                </a>
+
+                            {% endif %}
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+    <div class="row">
+        {% if is_paginated %}
+            {% load paginator %}
+            {% paginator %}
+        {% else %}
+            <div class="col-md-12">
+                <ul class="breadcrumbpag">
+                    {{ object_list.count }}
+                    {% ifequal object_list.count 1 %}{{ opts.verbose_name|capfirst }}{% else %}
+                        {{ opts.verbose_name_plural|capfirst }}{% endifequal %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock content %}

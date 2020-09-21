@@ -1,0 +1,169 @@
+{% extends "base/base_back.html" %}
+{% load static %}
+
+
+
+{% block breadcrumbs %}
+    <a href="{% url 'dashboard' %}">Inicio</a>
+    &rsaquo; {{ title }}
+{% endblock breadcrumbs %}
+
+{% block content_title %}
+    {{ opts.verbose_name_plural|capfirst }}|
+    <small>{{ title }}</small>
+{% endblock content_title %}
+
+
+{% block content %}
+
+    <div ng-app="myApp">
+        <div class="container" ng-controller="ventaCtrl as ctrl">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div ng-show="!ctrl.ruta">
+                            <fieldset class="scheduler-border">
+                                <legend class="scheduler-border">Ruta</legend>
+                                <select name="" id="" ng-model="ctrl.ruta" class="form-control">
+                                    <option value="">----</option>
+                                    <option value="LOCAL">LOCAL</option>
+                                    <option value="REGIONAL">REGIONAL</option>
+                                    <option value="NACIONAL">NACIONAL</option>
+                                </select>
+                            </fieldset>
+
+                        </div>
+
+                        <div ng-show="ctrl.ruta">
+                            <fieldset class="scheduler-border">
+                                <legend class="scheduler-border">Ruta</legend>
+                                <p class="text-info">Ruta Seleccionada <strong> {[{ ctrl.ruta }]}</strong></p>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <fieldset class="scheduler-border form-inline">
+                            <legend class="scheduler-border">Tipo Comprobante</legend>
+
+                            <select class="form-control" ng-model="ctrl.tipo_comprobante">
+                                <option ng-repeat="tc in ctrl.tipo_comprobantes" ng-value="tc.codigo">
+                                    {[{ tc.descripcion|limitTo: 30 }]}
+                                </option>
+                            </select>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-4">
+                        <fieldset class="scheduler-border">
+                            <legend class="scheduler-border">Distribuidor</legend>
+                            <input type="text" ng-model="ctrl.distribuidor_search"
+                                   uib-typeahead="state.username for state in ctrl.distruibuidores | filter:$viewValue | limitTo:8"
+                                   typeahead-on-select="ctrl.selectDistribuidor($item)"
+                                   class="form-control" placeholder="Distribuidor">
+                        </fieldset>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="form-inline col-md-4">
+                        <fieldset class="scheduler-border">
+                            <legend class="scheduler-border">Producto</legend>
+                            <form ng-submit="ctrl.buscarEquipo(ctrl.imei)">
+                                <input type="text" ng-model="ctrl.imei" class="form-control" ng-focus="ctrl.focusAdd"
+                                       placeholder="Ingrese Imei">
+                            </form>
+                        </fieldset>
+                    </div>
+
+                    <div class="col-md-8" ng-show="ctrl.ruta">
+                        <fieldset class="scheduler-border form-inline ">
+                            <legend class="scheduler-border">Cliente</legend>
+                            <div class="col-md-4">
+                                <input type="text" ng-model="ctrl.cliente_search"
+                                       uib-typeahead="state.campo_search for state in ctrl.clientes | filter:$viewValue | limitTo:8"
+                                       typeahead-on-select="ctrl.selectCliente($item)"
+                                       class="form-control" placeholder="Código de producto">
+                            </div>
+                            <div class="col-md-8">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Apellido</th>
+                                        <th>Tipo Documento</th>
+                                        <th>Documento</th>
+                                        <th> Dirección</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>{[{ ctrl.cliente.nombre }]}</td>
+                                        <td>{[{ ctrl.cliente.apellidos }]}</td>
+                                        <td>{[{ ctrl.cliente.tipo_documento }]}</td>
+                                        <td>{[{ ctrl.cliente.nro_documento }]}</td>
+                                        <td>{[{ ctrl.cliente.direccion }]}</td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </fieldset>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <table class="table">
+                <tr>
+                    <td>#</td>
+                    <td>Producto</td>
+                    <td>Imei</td>
+                    <td>Precio</td>
+                    <td>Acción</td>
+                </tr>
+                <tr ng-repeat="eq in ctrl.equipos">
+                    <td>1</td>
+                    <td>{[{ eq.model }]}</td>
+                    <td>{[{ eq.imei }]}</td>
+                    <td>{[{ eq.precio_venta }]}</td>
+                    <td>
+                        <button class="btn btn-danger" ng-click="ctrl.removeEquipo(eq)"><i class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <th colspan="3">Total</th>
+                    <th>{[{ ctrl.precio_total }]}</th>
+                    <th></th>
+                </tr>
+            </table>
+
+            <div class="form-inline">
+
+                <form ng-submit="ctrl.realizarVenta()">
+                    {% csrf_token %}
+                    <button class="btn btn-primary"><i class="fa fa-save"></i>
+                        Realizar
+                        Venta
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
+
+{% block customjs %}
+
+
+    <script src="{% static 'venta/service.js' %}"></script>
+    <script src="{% static 'venta/venta/ventactrl.js' %}"></script>
+
+{% endblock %}
